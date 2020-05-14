@@ -1,3 +1,6 @@
+Link do trello do projeto
+https://trello.com/b/djdfeAsQ/projeto-final-treinadev03-etapa-1-headhuntersrecruit
+
 # README
 
 This README would normally document whatever steps are necessary to get the
