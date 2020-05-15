@@ -22,10 +22,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# gem 'friendly_id', '~> 5.2.4'
-# gem 'friendly_id'
-# gem "cpf_cnpj"
-# gem 'devise'
+gem 'friendly_id'
+gem "cpf_cnpj"
+gem 'devise'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -38,13 +37,12 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara'
   gem 'factory_bot_rails'
-  gem 'rspec-rails', '~> 4.0.0'
-  # gem 'rspec-rails'
+  gem 'rspec-rails'
 end
 
-# group :test do
-#   # gem 'simplecov', require: false
-# end
+group :test do
+  gem 'simplecov', require: false
+end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.

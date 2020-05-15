@@ -1,0 +1,38 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/app/models/application_record.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1589515904
+  }
+}
