@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'friendly_id'
-gem "cpf_cnpj"
+gem 'cpf_cnpj'
 gem 'devise'
 
 # Use Active Storage variant

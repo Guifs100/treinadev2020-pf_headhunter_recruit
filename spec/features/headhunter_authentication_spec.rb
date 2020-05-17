@@ -1,16 +1,16 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-feature 'Headhunter authentication' do
-  context 'create new account' do
-    scenario 'successfully' do
+# feature 'Headhunter authentication' do
+#   context 'create new account' do
+#     scenario 'successfully' do
       
-      #arrange
+#       #arrange
       
-      #act
-      visit root_path
-      #assert
+#       #act
+#       visit root_path
+#       #assert
       
-      expect(page).to have_content('Bem vindo ao Headhunter Recruit')
-    end
-  end
-end
+#       expect(page).to have_content('Bem vindo ao Headhunter Recruit')
+#     end
+#   end
+# end
