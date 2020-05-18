@@ -1,6 +1,23 @@
 {
   "RSpec": {
     "coverage": {
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/treinadev2020-pf_headhunter_recruit/app/models/headhunter.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/treinadev2020-pf_headhunter_recruit/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/treinadev2020-pf_headhunter_recruit/app/helpers/application_helper.rb": {
         "lines": [
           1,
@@ -13,6 +30,15 @@
           null
         ]
       },
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/treinadev2020-pf_headhunter_recruit/app/controllers/home_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/treinadev2020-pf_headhunter_recruit/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -22,17 +48,8 @@
         ],
         "branches": {
         }
-      },
-      "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/treinadev2020-pf_headhunter_recruit/app/models/application_record.rb": {
-        "lines": [
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1589700929
+    "timestamp": 1589828367
   }
 }
