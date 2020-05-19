@@ -8,11 +8,13 @@ pt-BR:
         email: Email
         password: Senha
         password_confirmation: Confirmação de senha
-  # devise:
   headhunters:
     sessions:
       new:
-        log_in: Entrar
+        lorails sg_in: Entrar
     registrations:
       new:
-        sign_up: Cadastrar-me
+        sign_up: Cadastrar
+    shared:
+      _links: 
+        sign_up: Cadastrar

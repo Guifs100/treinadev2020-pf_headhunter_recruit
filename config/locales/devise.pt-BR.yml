@@ -1,7 +1,8 @@
 # encoding: UTF-8
 # pt-BR translations for Devise
+---
 pt-BR:
-  headhunters:
+  devise:
     confirmations:
       confirmed: "Sua conta foi confirmada com sucesso. Você está logado."
       send_instructions: "Dentro de minutos, você receberá um e-mail com instruções para a confirmação da sua conta."
@@ -52,7 +53,6 @@ pt-BR:
       send_instructions: "Dentro de minutos, você receberá um email com instruções para o desbloqueio da sua conta."
       send_paranoid_instructions: "Se sua conta existir, você receberá um e-mail com instruções para desbloqueá-la em alguns minutos."
       unlocked: "Sua conta foi desbloqueada com sucesso. Efetue login para continuar."
-
   errors:
     messages:
       already_confirmed: "já foi confirmado"
