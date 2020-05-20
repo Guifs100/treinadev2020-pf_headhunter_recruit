@@ -1,5 +1,13 @@
 <h1>Nova Vaga</h1>
 
+<% if @vacancy.errors.any?%>
+  <ul>
+    <%= @vacancy.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model: @vacancy, local: true do |f|%>
   <%= f.label :title, 'Título'%>
   <%= f.text_field :title %>

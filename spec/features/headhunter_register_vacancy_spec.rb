@@ -36,11 +36,30 @@ feature 'Headhunter register vacancy' do
     
   end
 
-  # xscenario 'and must fill in all fields' do
+  scenario 'and must fill in all fields' do
     #arrange
+    # headhunter = create(:headhunter)
+    headhunter = Headhunter.create( email: 'test@headhunter.com',
+                                    password: '12345678')
+    # level = create(:level, name: 'Júnior')
+    level = Level.create(name: 'Júnior')
+
+
     #act
+    login_as headhunter, scope: :headhunter
+    visit root_path
+    click_on 'Cadastrar nova vaga'
+    
+    click_on 'Enviar'
+
     #assert
-  # end
+    expect(page).to have_content('Título não pode ficar em branco')
+    expect(page).to have_content('Descrição da vaga não pode ficar em branco')
+    expect(page).to have_content('Habilidades não pode ficar em branco')
+    expect(page).to have_content('Salário não pode ficar em branco')
+    expect(page).to have_content('Data limite da inscrição não pode ficar em branco')
+    expect(page).to have_content('Endereço não pode ficar em branco')
+  end
 
   # xscenario 'and name can be unique' do
     #arrange

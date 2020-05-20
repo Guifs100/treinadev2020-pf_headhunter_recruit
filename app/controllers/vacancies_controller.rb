@@ -16,6 +16,7 @@ class VacanciesController < ApplicationController
       flash[:notice] = 'Vaga criada com sucesso'
       redirect_to @vacancy
     else
+      @levels = Level.all
       render new_vacancy_path
     end
   end

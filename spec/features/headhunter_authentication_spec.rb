@@ -1,7 +1,7 @@
 # require 'rails_helper'
 
 # feature 'Headhunter authentication' do
-#   context 'create new account' do
+#   context 'log in' do
 #     scenario 'successfully' do
       
 #       #arrange
