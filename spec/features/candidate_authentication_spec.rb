@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Headhunter authentication' do
+feature 'Candidate authentication' do
   context 'log in' do
     scenario 'successufully' do
       #Arrange
 
       #Act
       visit root_path
-      click_on 'Criar uma conta Headhunter'
+      click_on 'Criar uma conta Candidato'
       fill_in 'Email', with: 'test@headhunter.com'
       fill_in 'Senha', with: '12345678'
       fill_in 'Confirmação de senha', with: '12345678'
@@ -15,7 +15,7 @@ feature 'Headhunter authentication' do
 
       #Assert
       expect(page).to have_content('Login efetuado com sucesso. Se não foi autorizado, a confirmação será enviada por e-mail.')
-      expect(Headhunter.count).to eq 1
+      expect(Candidate.count).to eq 1
 
 
     end
@@ -24,7 +24,7 @@ feature 'Headhunter authentication' do
       #arrange
       #act
       visit root_path
-      click_on 'Criar uma conta Headhunter'
+      click_on 'Criar uma conta Candidato'
       click_on 'Cadastrar'
 
       #assert

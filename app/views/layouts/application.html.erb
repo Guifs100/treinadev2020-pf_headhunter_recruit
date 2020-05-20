@@ -13,14 +13,27 @@
     <%= flash[:notice] %>
     <%= flash[:alert] %>
     <nav>
-      <% unless headhunter_signed_in? %>
-        <%= link_to 'Criar uma conta', new_headhunter_registration_path %>
+      <% unless headhunter_signed_in? && candidate_signed_in? %>
+        <p>Headhunter</p>
+        <%= link_to 'Criar uma conta Headhunter', new_headhunter_registration_path %>
         <%= link_to 'Entrar', new_headhunter_session_path %>
-      <% else %>
-        <%= link_to 'Cadastrar nova vaga', new_vacancy_path%>
-        <%= link_to ' Sair ', destroy_headhunter_session_path, method: :delete  %>
+        <p>Candidato</p>
+        <%= link_to 'Criar uma conta Candidato', new_candidate_registration_path %>
+        <%= link_to 'Entrar', new_candidate_session_path %>
       <% end %>
     </nav>
+
+      <% if headhunter_signed_in?%>
+        <nav>
+          <%= link_to 'Cadastrar nova vaga', new_vacancy_path%>
+          <%= link_to ' Sair ', destroy_headhunter_session_path, method: :delete  %>
+        </nav>
+      <% else %>
+        <nav>
+          <%= link_to 'Cadastrar nova vaga', new_vacancy_path%>
+          <%= link_to ' Sair ', destroy_headhunter_session_path, method: :delete  %>
+        </nav>
+      <% end %>
 
     <%= yield %>
   </body>

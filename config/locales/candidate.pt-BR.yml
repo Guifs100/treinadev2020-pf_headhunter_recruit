@@ -1,0 +1,20 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      candidate: Candidato
+    attributes:
+      candidate:
+        email: Email
+        password: Senha
+        password_confirmation: Confirmação de senha
+  candidates:
+    sessions:
+      new:
+        log_in: Entrar
+    registrations:
+      new:
+        sign_up: Cadastrar
+    shared:
+      _links: 
+        sign_up: Cadastrar
