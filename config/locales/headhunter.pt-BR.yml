@@ -11,7 +11,7 @@ pt-BR:
   headhunters:
     sessions:
       new:
-        lorails sg_in: Entrar
+        log_in: Entrar
     registrations:
       new:
         sign_up: Cadastrar

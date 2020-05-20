@@ -1,0 +1,22 @@
+<h1>Nova Vaga</h1>
+
+<%= form_with model: @vacancy, local: true do |f|%>
+  <%= f.label :title, 'Título'%>
+  <%= f.text_field :title %>
+  <%= f.label :job_description, 'Descrição da vaga'%>
+  <%= f.text_field :job_description %>
+  <%= f.label :skills, 'Habilidades Necessárias'%>
+  <%= f.text_field :skills %>
+  <%= f.label :salary, 'Salário'%>
+  <%= f.number_field :salary %>
+
+  <%= f.label :level, 'Nível da vaga'%>
+  <%= f.collection_select :level, @vacancy, :level, :level %>
+
+  <%= f.label :registration_date, 'Data limite da inscrição'%>
+  <%= f.date_field :registration_date %>
+  <%= f.label :address, 'Endereço'%>
+  <%= f.text_field :address %>
+
+  <%= f.submit 'Enviar' %>
+<% end %>

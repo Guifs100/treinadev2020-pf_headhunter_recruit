@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
   devise_for :headhunters
-  root 'home#index'
+  
+  authenticated :headhunters do
+    root 'headhunter#index', as: :headhunters
+  end
+  # namespace :headhunters do
+  #   root 'headhunter#index'
+  # end
 
+  resources :vacancies, only: %i[index new create]
+  
+  root 'home#index'
 end

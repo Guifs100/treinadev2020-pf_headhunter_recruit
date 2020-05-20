@@ -17,6 +17,7 @@
         <%= link_to 'Criar uma conta', new_headhunter_registration_path %>
         <%= link_to 'Entrar', new_headhunter_session_path %>
       <% else %>
+        <%= link_to 'Cadastrar nova vaga', new_vacancy_path%>
         <%= link_to ' Sair ', destroy_headhunter_session_path, method: :delete  %>
       <% end %>
     </nav>
