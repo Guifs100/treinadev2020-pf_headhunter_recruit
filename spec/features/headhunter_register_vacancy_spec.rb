@@ -6,6 +6,9 @@ feature 'Headhunter register vacancy' do
     # headhunter = create(:headhunter)
     headhunter = Headhunter.create( email: 'test@headhunter.com',
                                     password: '12345678')
+    # level = create(:level, name: 'Júnior')
+    level = Level.create(name: 'Júnior')
+
 
     #act
     login_as headhunter, scope: :headhunter
@@ -14,19 +17,21 @@ feature 'Headhunter register vacancy' do
     fill_in 'Título', with: 'Desenvolvedor Ruby jr.'
     fill_in 'Descrição da vaga', with: 'Desevolvedor terá treino e conhecera cultura da empresa'
     fill_in 'Habilidades Necessárias', with: 'Ruby, ruby on Rails, banco de dados.'
-    fill_in 'Salário', with: '2400'
-    fill_in 'Nível da vaga', with: 'Júnior'
-    fill_in 'Data limite da inscrição', with: 2.days.from_now
+    fill_in 'Salário', with: '1200'
+    select 'Júnior', from: 'Nível'
+    # select level.name, from: 'Nível'
+    fill_in 'Data limite da inscrição', with: '20/05/2030'
     fill_in 'Endereço', with: 'Av. Paulista'
     click_on 'Enviar'
 
     #assert
-    expect(page).to have_content('Título: criada com sucesso')
+    expect(page).to have_content('Vaga criada com sucesso')
+    expect(page).to have_content('Título: Desenvolvedor Ruby jr.')
     expect(page).to have_content('Descrição da vaga: Desevolvedor terá treino e conhecera cultura da empresa')
-    expect(page).to have_content('Habilidades necessárias: Ruby, ruby on Rails, banco de dados.')
-    expect(page).to have_content('Sálario: R$ 1.200,00')
-    expect(page).to have_content('Nível da vaga: Júnior')
-    expect(page).to have_content("Data limite da inscrição: #{2.days.from_now}")
+    expect(page).to have_content('Habilidades: Ruby, ruby on Rails, banco de dados.')
+    expect(page).to have_content('Salário: R$ 1.200,00')
+    expect(page).to have_content('Nível: Júnior')
+    expect(page).to have_content('Data limite da inscrição: 20/05/2030')
     expect(page).to have_content('Endereço: Av. Paulista')
     
   end

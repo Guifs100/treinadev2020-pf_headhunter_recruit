@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/treinadev2020-pf_headhunter_recruit/app/models/headhunter.rb": {
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/models/headhunter.rb": {
         "lines": [
           1,
           null,
@@ -11,58 +11,91 @@
           null
         ]
       },
-      "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/treinadev2020-pf_headhunter_recruit/app/models/application_record.rb": {
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/treinadev2020-pf_headhunter_recruit/app/helpers/application_helper.rb": {
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/treinadev2020-pf_headhunter_recruit/app/models/vacancy.rb": {
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/models/level.rb": {
         "lines": [
           1,
-          null,
-          null,
           1,
           null,
           null
         ]
       },
-      "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/treinadev2020-pf_headhunter_recruit/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/treinadev2020-pf_headhunter_recruit/app/controllers/home_controller.rb": {
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/models/vacancy.rb": {
         "lines": [
           1,
           1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/treinadev2020-pf_headhunter_recruit/app/controllers/vacancies_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null,
           null,
           null,
           null,
           null
         ]
       },
-      "/home/guifs/workspace/meu_projeto/curso/treinadev03/pf_headhunter_recruit/treinadev2020-pf_headhunter_recruit/app/mailers/application_mailer.rb": {
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/controllers/home_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/controllers/vacancies_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -73,6 +106,6 @@
         }
       }
     },
-    "timestamp": 1589954772
+    "timestamp": 1590003587
   }
 }

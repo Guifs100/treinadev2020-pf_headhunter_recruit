@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   #   root 'headhunter#index'
   # end
 
-  resources :vacancies, only: %i[index new create]
+  resources :vacancies, only: %i[index show new create]
   
   root 'home#index'
 end

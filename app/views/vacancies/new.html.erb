@@ -9,10 +9,8 @@
   <%= f.text_field :skills %>
   <%= f.label :salary, 'Salário'%>
   <%= f.number_field :salary %>
-
-  <%= f.label :level, 'Nível da vaga'%>
-  <%= f.collection_select :level, @vacancy, :level, :level %>
-
+  <%= f.label :level_id, 'Nível'%>
+  <%= f.collection_select :level_id, @levels, :id, :name %>
   <%= f.label :registration_date, 'Data limite da inscrição'%>
   <%= f.date_field :registration_date %>
   <%= f.label :address, 'Endereço'%>
