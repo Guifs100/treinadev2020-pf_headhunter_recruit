@@ -20,10 +20,6 @@ Rails.application.routes.draw do
       # get 'head', on: :collection
     end
   end
-
-  # authenticated :candidate do
-  #   root 'home#headhunter', as: :authenticated_candidates
-  # end
   
   
   resources :vacancies, only: %i[index show new create]

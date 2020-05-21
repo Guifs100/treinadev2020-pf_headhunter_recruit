@@ -6,8 +6,8 @@ feature 'Headhunter register vacancy' do
     # headhunter = create(:headhunter)
     headhunter = Headhunter.create( email: 'test@headhunter.com',
                                     password: '12345678')
-    # level = create(:level, name: 'Júnior')
-    level = Level.create(name: 'Júnior')
+    level = create(:level, name: 'Júnior')
+    # level = Level.create(name: 'Júnior')
 
 
     #act
