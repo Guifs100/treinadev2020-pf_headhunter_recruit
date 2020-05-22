@@ -8,6 +8,7 @@
   </ul>
 <% end %>
 
+<!-- TODO: usar o I18n-->
 <%= form_with model: @vacancy, local: true do |f|%>
   <%= f.label :title, 'Título'%>
   <%= f.text_field :title %>

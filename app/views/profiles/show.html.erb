@@ -1,0 +1,20 @@
+<h1> Perfil Cadastrado </h1>
+
+<dl>
+    <p><%= Profile.human_attribute_name(:photo) %>:</p>
+    <%#= image_tag(@profile.photo) %>
+    <%= image_tag('/images/perfil.jpg', id: 'perfil') %>
+    <dt><%= Profile.human_attribute_name(:full_name) %>:</dt>
+    <dd><%= @profile.full_name %></dd>
+    <dt><%= Profile.human_attribute_name(:social_name) %>:</dt>
+    <dd><%= @profile.social_name %></dd>
+    <dt><%= Profile.human_attribute_name(:birth_date) %>:</dt>
+    <dd><%= l @profile.birth_date %></dd>
+    <dt><%= Profile.human_attribute_name(:formation) %>:</dt>
+    <dd><%= @profile.formation %></dd>
+    <dt><%= Profile.human_attribute_name(:description) %>:</dt>
+    <dd><%= @profile.description %></dd>
+    <dt><%= Profile.human_attribute_name(:experience) %>:</dt>
+    <dd><%= @profile.experience %></dd>
+
+</dl>

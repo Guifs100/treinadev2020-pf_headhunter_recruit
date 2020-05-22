@@ -18,9 +18,7 @@ feature 'Headhunter register vacancy' do
     fill_in 'Descrição da vaga', with: 'Desevolvedor terá treino e conhecera cultura da empresa'
     fill_in 'Habilidades Necessárias', with: 'Ruby, ruby on Rails, banco de dados.'
     fill_in 'Salário', with: '1200'
-    select 'Júnior', from: 'Nível'
-    # select level.name, from: 'Nível'
-    # fill_in 'Data limite da inscrição', with: '20/05/2030'
+    select level.name, from: 'Nível'
     fill_in 'Data limite da inscrição', with: 2.days.from_now
     fill_in 'Endereço', with: 'Av. Paulista'
     click_on 'Enviar'
@@ -32,7 +30,6 @@ feature 'Headhunter register vacancy' do
     expect(page).to have_content('Habilidades: Ruby, ruby on Rails, banco de dados.')
     expect(page).to have_content('Salário: R$ 1.200,00')
     expect(page).to have_content('Nível: Júnior')
-    # expect(page).to have_content('Data limite da inscrição: 20/05/2030')
     expect(page).to have_content(I18n.l(Time.zone.today + 2.days))
     expect(page).to have_content('Endereço: Av. Paulista')
     

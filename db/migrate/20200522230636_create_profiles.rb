@@ -7,6 +7,7 @@ class CreateProfiles < ActiveRecord::Migration[6.0]
       t.string :formation
       t.string :description
       t.string :experience
+      t.binary :photo
       t.references :candidate, null: false, foreign_key: true
 
       t.timestamps
