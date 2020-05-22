@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_20_222233) do
+ActiveRecord::Schema.define(version: 2020_05_22_043557) do
 
   create_table "candidates", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -42,6 +42,30 @@ ActiveRecord::Schema.define(version: 2020_05_20_222233) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "photos", force: :cascade do |t|
+    t.string "name"
+    t.binary "data"
+    t.string "filename"
+    t.string "mime_type"
+    t.integer "profile_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_photos_on_profile_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "full_name"
+    t.string "social_name"
+    t.date "birth_date"
+    t.string "formation"
+    t.string "description"
+    t.string "experience"
+    t.integer "candidate_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["candidate_id"], name: "index_profiles_on_candidate_id"
+  end
+
   create_table "vacancies", force: :cascade do |t|
     t.string "title"
     t.string "job_description"
@@ -56,5 +80,7 @@ ActiveRecord::Schema.define(version: 2020_05_20_222233) do
     t.index ["level_id"], name: "index_vacancies_on_level_id"
   end
 
+  add_foreign_key "photos", "profiles"
+  add_foreign_key "profiles", "candidates"
   add_foreign_key "vacancies", "levels"
 end

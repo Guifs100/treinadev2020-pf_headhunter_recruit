@@ -4,6 +4,7 @@ feature 'Candidate authentication' do
   context 'log in' do
     scenario 'successufully' do
       #Arrange
+      
 
       #Act
       visit root_path
