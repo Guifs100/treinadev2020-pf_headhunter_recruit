@@ -39,6 +39,14 @@
           null
         ]
       },
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/models/profile.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/controllers/application_controller.rb": {
         "lines": [
           1,
@@ -58,13 +66,13 @@
         "lines": [
           1,
           1,
-          1,
-          1,
+          2,
+          2,
           null,
-          1,
+          2,
           null,
           null,
-          1,
+          2,
           null,
           null,
           null,
@@ -78,10 +86,15 @@
           null
         ]
       },
-      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/models/profile.rb": {
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/controllers/home_controller.rb": {
         "lines": [
           1,
           1,
+          null,
+          null,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -95,7 +108,7 @@
           null,
           null,
           1,
-          1,
+          2,
           null,
           null,
           1,
@@ -120,60 +133,68 @@
           null
         ]
       },
-      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/controllers/home_controller.rb": {
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/models/level.rb": {
         "lines": [
-          0,
-          0,
+          1,
+          1,
           null,
-          0,
-          null,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          null
+        ]
       },
       "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/controllers/vacancies_controller.rb": {
         "lines": [
-          0,
+          1,
           null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
           null,
           null,
-          0,
+          1,
+          2,
+          2,
           null,
-          0,
-          0,
-          0,
-          0,
-          0,
           null,
-          0,
+          1,
+          2,
+          2,
+          1,
+          1,
           null,
-          0
-        ],
-        "branches": {
-        }
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/models/vacancy.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       },
       "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/mailers/application_mailer.rb": {
         "lines": [
@@ -184,36 +205,8 @@
         ],
         "branches": {
         }
-      },
-      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/models/level.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/models/vacancy.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1590190798
+    "timestamp": 1590205307
   }
 }

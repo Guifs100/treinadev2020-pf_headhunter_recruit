@@ -6,7 +6,6 @@ FactoryBot.define do
     formation { "MyString" }
     description { "MyString" }
     experience { "MyString" }
-    photo { "" }
     candidate { nil }
   end
 end
