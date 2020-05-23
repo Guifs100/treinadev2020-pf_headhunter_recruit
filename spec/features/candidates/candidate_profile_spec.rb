@@ -8,7 +8,6 @@ feature 'Candidate profile' do
     #act
     login_as candidate, scope: :candidate
     visit root_path
-    # attach_file('Foto', '../../app/assets/images/perfil.jpg')
     attach_file('Foto', './app/assets/images/perfil.jpg')
     fill_in 'Nome Completo', with: 'Fulano Silva'
     fill_in 'Nome Social', with: 'Fulano'
@@ -32,9 +31,23 @@ feature 'Candidate profile' do
 
   end
 
-  # xscenario 'and must fill profile' do
-    
-  # end
+  scenario 'and must fill profile' do
+    candidate = Candidate.create!(email: 'test@candidate', password: '12345678')
+
+    #act
+    login_as candidate, scope: :candidate
+    visit root_path
+    click_on 'Enviar'
+
+    #assert
+    expect(page).to have_content('Foto não pode ficar em branco')
+    expect(page).to have_content('Nome Completo não pode ficar em branco')
+    expect(page).to have_content('Nome Social não pode ficar em branco')
+    expect(page).to have_content('Data de Nascimento não pode ficar em branco')
+    expect(page).to have_content('Formação não pode ficar em branco ')
+    expect(page).to have_content('Descrição não pode ficar em branco')
+    expect(page).to have_content('Experiência não pode ficar em branco')
+  end
 
   # xscenario 'não terminou de preencher perfil' do
     

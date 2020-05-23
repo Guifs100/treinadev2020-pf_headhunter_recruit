@@ -7,5 +7,6 @@ FactoryBot.define do
     level
     registration_date { 10.days.from_now }
     address { "Av. Paulista, 1234 SP" }
+    headhunter
   end
 end
