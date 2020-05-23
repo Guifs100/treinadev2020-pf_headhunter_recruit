@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_021209) do
+ActiveRecord::Schema.define(version: 2020_05_23_194405) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -85,12 +85,15 @@ ActiveRecord::Schema.define(version: 2020_05_23_021209) do
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "level_id", null: false
     t.integer "status", default: 0
+    t.integer "headhunter_id", null: false
+    t.integer "level_id", null: false
+    t.index ["headhunter_id"], name: "index_vacancies_on_headhunter_id"
     t.index ["level_id"], name: "index_vacancies_on_level_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "profiles", "candidates"
+  add_foreign_key "vacancies", "headhunters"
   add_foreign_key "vacancies", "levels"
 end

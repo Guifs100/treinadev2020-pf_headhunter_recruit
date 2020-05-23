@@ -1,11 +1,11 @@
 FactoryBot.define do
   factory :vacancy do
-    title { "MyString" }
-    job_description { "MyString" }
-    skills { "MyString" }
-    salary { "9.99" }
-    level { 1 }
-    registration_date { "2020-05-20" }
-    address { "MyString" }
+    title { "Desenvolvedor Junior" }
+    job_description { "Trabalhar em equipe, proatividade, compromisso e disciplina" }
+    skills { "Ruby, Rails, Banco de Dados" }
+    salary { 1200 }
+    level
+    registration_date { 10.days.from_now }
+    address { "Av. Paulista, 1234 SP" }
   end
 end

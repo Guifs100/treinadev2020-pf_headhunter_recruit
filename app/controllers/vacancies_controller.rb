@@ -12,8 +12,10 @@ class VacanciesController < ApplicationController
 
   def create
     @vacancy = Vacancy.new(vacancy_params)
+    @vacancy.headhunter = current_headhunter
     if @vacancy.save
       flash[:notice] = 'Vaga criada com sucesso'
+      @vacancy.available!
       redirect_to @vacancy
     else
       @levels = Level.all
@@ -29,7 +31,6 @@ class VacanciesController < ApplicationController
                                     :skills, :salary,
                                     :registration_date,
                                     :address, :level_id)
-                                    # :status)
   end
 
 end

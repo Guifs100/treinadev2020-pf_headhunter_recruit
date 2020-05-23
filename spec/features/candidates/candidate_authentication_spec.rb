@@ -44,6 +44,23 @@ feature 'Candidate authentication' do
     scenario 'successfully' do
       
       #arrange
+    #   candidate = Candidate.create!(email: 'teste@candidate.com', password: '12345678')
+    # other_candidate = Candidate.create!(email: 'teste1@candidate.com', password: '12345678')
+    # # profile = create(:profile, candidate: candidate)
+    # # candidate.profile = profile
+    # profile = Profile.create!(candidate: other_candidate, full_name: "Fulano Silva", 
+    #                           social_name: "Fulano",
+    #                           birth_date: "15/11/1996",
+    #                           formation: "Análise e desenvolvimento de sistemas",
+    #                           description: "Formado na Fatec",
+    #                           experience: "Nenhuma")
+    #                           # photo: 'assets/images/perfil.jpg')
+    # profile.photo = 'assets/images/perfil.jpg'
+
+    # login_as candidate, scope: :candidate
+    # visit root_path
+
+    # expect(page).to have_content(vacancy.title)
       
       #act
       visit root_path
