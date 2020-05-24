@@ -1,1 +1,16 @@
 <h1>Olá Candidato</h1>
+
+<h1>Vagas</h1>
+
+<% @vacancies.each do |vacancy| %>
+  <div>
+    <dl>
+      <dt> Vaga </dt>
+      <dd><%= vacancy.title %></dd>
+      <dt> Descrição </dt>
+      <dd><%= vacancy.job_description %></dd>
+      <dt>Nível</dt>
+      <dd><%= vacancy.level.name %></dd>
+    </dl>
+  </div>
+<% end %>

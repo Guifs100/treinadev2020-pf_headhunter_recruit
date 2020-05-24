@@ -12,7 +12,8 @@ feature 'Candidate applies for a vacancy' do
                                level: level,
                                registration_date: 10.days.from_now,
                                address: "Av. Paulista, 1234 SP",
-                               headhunter: headhunter)
+                               headhunter: headhunter,
+                               status: 0)
     other_vacancy = Vacancy.create!( title: "Programador Senior",
                                      job_description: "Proatividade e compromisso",
                                      skills: "SQL, C, Java",
@@ -20,8 +21,8 @@ feature 'Candidate applies for a vacancy' do
                                      level: other_level,
                                      registration_date: 10.days.from_now,
                                      address: "Av. Paulista, 1234 SP",
-                                     headhunter: headhunter)
-    other_vacancy.status = 5
+                                     headhunter: headhunter,
+                                     status: 5)
     candidate = Candidate.create!(email: 'teste@candidate.com', password: '12345678')
     other_candidate = Candidate.create!(email: 'teste1@candidate.com', password: '12345678')
     profile = Profile.create!(candidate: candidate, full_name: "Fulano Silva", 
@@ -29,15 +30,20 @@ feature 'Candidate applies for a vacancy' do
                               birth_date: "15/11/1996",
                               formation: "Análise e desenvolvimento de sistemas",
                               description: "Formado na Fatec",
-                              experience: "Nenhuma",
-                              photo: './app/assets/images/perfil.jpg')
-    # profile.photo = 'assets/images/perfil.jpg'
+                              experience: "Nenhuma")
 
     login_as candidate, scope: :candidate
     visit root_path
+    # save_page
+
+    # expect(page).to have_content(other_vacancy.status)
+    # expect(page).to have_content(vacancy.status)
 
     expect(page).to have_content(vacancy.title)
-    expect(page).to have_content(vacancy.skills)
-    expect(page).to have_content(vacancy.salary)
+    expect(page).to have_content(vacancy.job_description)
+    expect(page).to have_content(vacancy.level.name)
+    expect(page).not_to have_content(other_vacancy.title)
+    expect(page).not_to have_content(other_vacancy.job_description)
+    expect(page).not_to have_content(other_vacancy.level.name)
   end
 end

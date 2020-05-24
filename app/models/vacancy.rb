@@ -6,7 +6,7 @@ class Vacancy < ApplicationRecord
             :registration_date, :address, 
             presence: true
 
-  enum status: { available: 0, unavailable: 5 }
+  enum status: {available: 0, unavailable: 5}
 
 
 
