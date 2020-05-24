@@ -5,23 +5,17 @@ Rails.application.routes.draw do
   authenticated :headhunter do
     root 'headhunters_pages#index', as: :authenticated_headhunters
   end
-  # scope module: 'headhunter' do
-    resources :headhunters_pages, only: %i[index] do
-      # get 'head', on: :collection
-    end
-  # end
 
+  resources :vacancies, only: %i[index show new create]
 
   authenticated :candidate do
     root 'candidates_pages#index', as: :authenticated_candidates
   end
 
-  # resources :candidates_pages, only: %i[index] do
-    resources :profiles, only: %i[show new create ]
-    # resources :profiles
+  resources :profiles, only: %i[show new create edit update]
+
   
   
-  resources :vacancies, only: %i[index show new create]
   
   root 'home#index'
 end

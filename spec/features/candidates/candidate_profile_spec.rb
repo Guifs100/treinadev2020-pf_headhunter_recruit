@@ -50,7 +50,41 @@ feature 'Candidate profile' do
     expect(page).to have_content('Experiência não pode ficar em branco')
   end
 
-  # xscenario 'não terminou de preencher perfil' do
-    
-  # end
+  # TODO: arrumar teste quando conseguir criar imagem no teste
+  xscenario 'edit profile' do
+    #arrange
+    candidate = Candidate.create!(email: 'test@candidate', password: '12345678')
+    profile = Profile.create!(candidate: candidate, full_name: "Fulano Silva", 
+                              social_name: "Fulano",
+                              birth_date: "15/11/1996",
+                              formation: "Análise e desenvolvimento de sistemas",
+                              description: "Formado na Fatec",
+                              experience: "Nenhuma")
+
+    #act
+    login_as candidate, scope: :candidate
+    visit root_path
+    click_on 'Ver Perfil'
+    click_on 'Editar Perfil'
+    # attach_file('Foto', './app/assets/images/perfil.jpg')
+    fill_in 'Nome Completo', with: 'Alan Silva'
+    fill_in 'Nome Social', with: 'Alan'
+    fill_in 'Data de Nascimento', with: '15/11/1996'
+    fill_in 'Formação', with: 'Ciêcia da Computação'
+    fill_in 'Descrição', with: 'Dedicado e apaixonado por máquinas'
+    fill_in 'Experiência', with: 'Dev junior na google por 2 anos'
+    click_on 'Enviar'
+
+    #assert
+    expect(page).to have_content('Perfil Alterado')
+    expect(page).to have_content('Foto:')
+    expect(page).to have_css('img#perfil', count: 1)
+    expect(page).to have_content('Nome Completo: Alan Silva')
+    expect(page).to have_content('Nome Social: Alan')
+    expect(page).to have_content('Data de Nascimento:')
+    expect(page).to have_content('15/11/1996')
+    expect(page).to have_content('Formação: Ciêcia da Computação')
+    expect(page).to have_content('Descrição: Dedicado e apaixonado por máquinas')
+    expect(page).to have_content('Experiência: Dev junior na google por 2 anos')
+  end
 end

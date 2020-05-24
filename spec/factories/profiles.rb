@@ -6,7 +6,10 @@ FactoryBot.define do
     formation { "Análise e desenvolvimento de sistemas" }
     description { "Formado na Fatec" }
     experience { "Nenhuma" }
-    photo { 'assets/images/perfil.jpg' }
+    # photo { 'assets/images/perfil.jpg' }
     candidate
+    # after(:build) do |profile|
+      # profile.photo.attach(io: File.open(Rails.root.join('spec','support', 'assets', 'perfil.jpg' )), filename: 'perfil.jpg', content_type: 'image/jpeg' )
+    # end
   end
 end

@@ -1,6 +1,6 @@
 <h1>Olá Candidato</h1>
 
-<h1>Vagas</h1>
+<h1>Vagas Disponíveis</h1>
 
 <% @vacancies.each do |vacancy| %>
   <div>
@@ -12,5 +12,6 @@
       <dt>Nível</dt>
       <dd><%= vacancy.level.name %></dd>
     </dl>
+    <p><%#= link_to 'Ver Detalhes', profile_path(vacancy)%></p>
   </div>
 <% end %>
