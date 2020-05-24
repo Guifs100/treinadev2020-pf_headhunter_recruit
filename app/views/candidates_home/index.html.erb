@@ -1,5 +1,13 @@
 <h1>Olá Candidato</h1>
 
+
+<%= form_with url: search_vacancies_path, method: :get do |f| %>
+  <%= f.label :query, 'Procurar Vagas'%>
+  <%= f.search_field :query %>
+  <%= f.submit 'Buscar' %>
+<% end %>
+
+
 <h1>Vagas Disponíveis</h1>
 
 <% @vacancies.each do |vacancy| %>
@@ -12,6 +20,6 @@
       <dt>Nível</dt>
       <dd><%= vacancy.level.name %></dd>
     </dl>
-    <p><%#= link_to 'Ver Detalhes', profile_path(vacancy)%></p>
+    <p><%= link_to 'Ver Detalhes', vacancy_path(vacancy)%></p>
   </div>
 <% end %>

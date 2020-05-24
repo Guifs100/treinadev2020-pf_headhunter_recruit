@@ -8,6 +8,10 @@ class Vacancy < ApplicationRecord
 
   enum status: {available: 0, unavailable: 5}
 
+  scope :search, ->(query) {where('title LIKE ? AND status = ?', "%#{query}%", Vacancy.statuses[:available] )
+                              .or(where('job_description LIKE ? AND status = ?', "%#{query}%", Vacancy.statuses[:available] ))}
+                                # .and(where(status: :available))}
+
 
 
 end

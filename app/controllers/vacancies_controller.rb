@@ -1,5 +1,9 @@
 class VacanciesController < ApplicationController
 
+  def index
+
+  end
+
   def show
     id = params[:id]
     @vacancy = Vacancy.find(id)
@@ -21,6 +25,12 @@ class VacanciesController < ApplicationController
       @levels = Level.all
       render new_vacancy_path
     end
+  end
+
+  def search
+    @vacancies = Vacancy.search(params[:query])
+    @candidate = current_candidate
+    render :index
   end
 
 
