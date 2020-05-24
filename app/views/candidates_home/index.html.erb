@@ -1,12 +1,10 @@
 <h1>Olá Candidato</h1>
 
-
 <%= form_with url: search_vacancies_path, method: :get do |f| %>
   <%= f.label :query, 'Procurar Vagas'%>
   <%= f.search_field :query %>
   <%= f.submit 'Buscar' %>
 <% end %>
-
 
 <h1>Vagas Disponíveis</h1>
 

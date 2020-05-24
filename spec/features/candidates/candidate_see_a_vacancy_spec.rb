@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 feature 'Candidate see a vacancy' do
+  let(:profile) {build :profile, :with_photo}
+  let(:profile) {build_stubbed :profile, :with_photo}
+  let(:profile) {create :profile, :with_photo}
   scenario 'successufully' do
     level = create(:level, name: 'Junior')
     other_level = create(:level, name: 'Senior')
@@ -30,7 +33,8 @@ feature 'Candidate see a vacancy' do
                               birth_date: "15/11/1996",
                               formation: "Análise e desenvolvimento de sistemas",
                               description: "Formado na Fatec",
-                              experience: "Nenhuma")
+                              experience: "Nenhuma",
+                              photo: fixture_file_upload(Rails.root.join('spec', 'support', 'assets', 'perfil.jpg'), 'image/jpg'))
 
     login_as candidate, scope: :candidate
     visit root_path
@@ -58,17 +62,17 @@ feature 'Candidate see a vacancy' do
                                headhunter: headhunter,
                                status: 0)
     candidate = Candidate.create!(email: 'teste@candidate.com', password: '12345678')
-    profile = Profile.create!(candidate: candidate, full_name: "Fulano Silva", 
-                              social_name: "Fulano",
-                              birth_date: "15/11/1996",
-                              formation: "Análise e desenvolvimento de sistemas",
-                              description: "Formado na Fatec",
-                              experience: "Nenhuma")
+    profile.candidate = candidate
+    profile.full_name = "Fulano Silva"
+    profile.social_name = "Fulano"
+    profile.birth_date = '15/11/1996'
+    profile.formation = 'Análise e desenvolvimento de sistemas'
+    profile.description = 'Formado na Fatec'
+    profile.experience = 'Nenhuma'
 
     login_as candidate, scope: :candidate
     visit root_path
     click_on 'Ver Detalhes'
-    # save_page
 
     expect(page).to have_content(vacancy.title)
     expect(page).to have_content(vacancy.job_description)
@@ -120,12 +124,13 @@ feature 'Candidate see a vacancy' do
                                        headhunter: headhunter,
                                        status: 0)
     candidate = Candidate.create!(email: 'teste@candidate.com', password: '12345678')
-    profile = Profile.create!(candidate: candidate, full_name: "Fulano Silva", 
-                              social_name: "Fulano",
-                              birth_date: "15/11/1996",
-                              formation: "Análise e desenvolvimento de sistemas",
-                              description: "Formado na Fatec",
-                              experience: "Nenhuma")
+    profile.candidate = candidate
+    profile.full_name = "Fulano Silva"
+    profile.social_name = "Fulano"
+    profile.birth_date = '15/11/1996'
+    profile.formation = 'Análise e desenvolvimento de sistemas'
+    profile.description = 'Formado na Fatec'
+    profile.experience = 'Nenhuma'
 
     login_as candidate, scope: :candidate
     visit root_path
@@ -140,9 +145,7 @@ feature 'Candidate see a vacancy' do
     expect(page).to have_content(other_vacancy.level.name)
     expect(page).not_to have_content(another_vacancy.title)
     expect(page).not_to have_content(another_vacancy.job_description)
-    # expect(page).not_to have_content(another_vacancy.level.name)
     expect(page).not_to have_content(another_vacancy2.title)
     expect(page).not_to have_content(another_vacancy2.job_description)
-    # expect(page).not_to have_content(another_vacancy2.level.name)
   end
 end

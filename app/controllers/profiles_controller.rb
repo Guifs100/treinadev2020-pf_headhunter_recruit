@@ -20,6 +20,21 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def edit
+    @profile = Profile.find(params[:id])
+    
+  end
+
+  def update
+    @profile = Profile.find(params[:id])
+    if @profile.update(profile_params)
+      flash[:notice] = 'Perfil Alterado'
+      redirect_to @profile
+    else
+      render :new
+    end
+  end
+
   private
 
   def profile_params

@@ -51,7 +51,7 @@ feature 'Candidate profile' do
   end
 
   # TODO: arrumar teste quando conseguir criar imagem no teste
-  xscenario 'edit profile' do
+  scenario 'edit profile' do
     #arrange
     candidate = Candidate.create!(email: 'test@candidate', password: '12345678')
     profile = Profile.create!(candidate: candidate, full_name: "Fulano Silva", 
@@ -59,14 +59,16 @@ feature 'Candidate profile' do
                               birth_date: "15/11/1996",
                               formation: "Análise e desenvolvimento de sistemas",
                               description: "Formado na Fatec",
-                              experience: "Nenhuma")
+                              experience: "Nenhuma",
+                              photo: fixture_file_upload(Rails.root.join('spec', 'support', 'assets', 'perfil.jpg'), 'image/jpg'))
+
 
     #act
     login_as candidate, scope: :candidate
     visit root_path
     click_on 'Ver Perfil'
     click_on 'Editar Perfil'
-    # attach_file('Foto', './app/assets/images/perfil.jpg')
+    attach_file('Foto', './app/assets/images/perfil.jpg')
     fill_in 'Nome Completo', with: 'Alan Silva'
     fill_in 'Nome Social', with: 'Alan'
     fill_in 'Data de Nascimento', with: '15/11/1996'

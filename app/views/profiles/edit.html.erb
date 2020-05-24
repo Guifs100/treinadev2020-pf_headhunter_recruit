@@ -1,0 +1,31 @@
+<h1>Cadastre seu Perfil</h1>
+
+<% if @profile.errors.any?%>
+  <ul>
+    <%= @profile.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<!-- TODO: usar o I18n-->
+<%= form_with model: @profile, local: true do |f|%>
+
+  <%= f.label :photo, 'Foto'%>
+  <%= f.file_field :photo, :accept => 'image/jpeg' %>
+
+  <%= f.label :full_name, 'Nome Completo'%>
+  <%= f.text_field :full_name %>
+  <%= f.label :social_name, 'Nome Social'%>
+  <%= f.text_field :social_name %>
+  <%= f.label :birth_date, 'Data de Nascimento'%>
+  <%= f.date_field :birth_date %>
+  <%= f.label :formation, 'Formação'%>
+  <%= f.text_field :formation %>
+  <%= f.label :description, 'Descrição'%>
+  <%= f.text_field :description %>
+  <%= f.label :experience, 'Experiência'%>
+  <%= f.text_field :experience %>
+
+  <%= f.submit 'Enviar' %>
+<% end %>
