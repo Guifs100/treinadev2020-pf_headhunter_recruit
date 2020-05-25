@@ -8,13 +8,16 @@ Rails.application.routes.draw do
 
   resources :vacancies, only: %i[ index show new create] do
     get 'search', on: :collection
+    resources :apply_vacancies, only: %i[ index show new create ]
   end
 
   authenticated :candidate do
     root 'candidates_home#index', as: :candidates_home
   end
 
-  resources :profiles, only: %i[show new create edit update]
+  resources :profiles, only: %i[show new create edit update] do
+    get 'all_apply_jobs', on: :collection
+  end
 
   root 'home#index'
 end

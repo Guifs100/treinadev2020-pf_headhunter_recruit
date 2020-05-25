@@ -35,6 +35,12 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def all_apply_jobs
+    @profile = Profile.find(current_candidate.id)
+    @apply_vacancies = ApplyVacancy.where('profile_id = ?', @profile.id)
+    # {where('title LIKE ? AND status = ?', "%#{query}%", Vacancy.statuses[:available] )
+  end
+
   private
 
   def profile_params

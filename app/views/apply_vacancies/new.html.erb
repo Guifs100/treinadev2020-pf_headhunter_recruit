@@ -1,0 +1,18 @@
+<h1>Envie uma mensagem sobre você </h1>
+
+<% if @apply_vacancy.errors.any?%>
+  <ul>
+    <%= @apply_vacancy.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<!-- TODO: usar o I18n-->
+<%= form_with model: [@vacancy, @apply_vacancy], local: true do |f|%>
+
+  <%= f.label :apply_message, 'Mensagem'%>
+  <%= f.text_field :apply_message %>
+
+  <%= f.submit 'Enviar' %>
+<% end %>

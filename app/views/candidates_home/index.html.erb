@@ -9,7 +9,7 @@
 <h1>Vagas Disponíveis</h1>
 
 <% @vacancies.each do |vacancy| %>
-  <div>
+  <div id="vacancy-<%= vacancy.id %>">
     <dl>
       <dt> Vaga </dt>
       <dd><%= vacancy.title %></dd>

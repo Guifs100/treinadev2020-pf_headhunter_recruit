@@ -1,0 +1,17 @@
+<h1> Minhas Vagas Aplicadas </h1>
+
+<% @apply_vacancies.each do |applied| %>
+  <div>
+    <dl>
+      <dt> Mensagem enviada </dt>
+      <dd><%= applied.apply_message %></dd>
+      <dt> Vaga </dt>
+      <dd><%= applied.vacancy.title %></dd>
+      <dt> Descrição </dt>
+      <dd><%= applied.vacancy.job_description %></dd>
+      <dt>Nível</dt>
+      <dd><%= applied.vacancy.level.name %></dd>
+    </dl>
+    <p><%= link_to 'Ver Detalhes', vacancy_apply_vacancy_path(applied.vacancy, applied)%></p>
+  </div>
+<% end %>

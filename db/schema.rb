@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_194405) do
+ActiveRecord::Schema.define(version: 2020_05_25_003008) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 2020_05_23_194405) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "apply_vacancies", force: :cascade do |t|
+    t.integer "profile_id", null: false
+    t.integer "vacancy_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "apply_message"
+    t.index ["profile_id"], name: "index_apply_vacancies_on_profile_id"
+    t.index ["vacancy_id"], name: "index_apply_vacancies_on_vacancy_id"
   end
 
   create_table "candidates", force: :cascade do |t|
@@ -93,6 +103,8 @@ ActiveRecord::Schema.define(version: 2020_05_23_194405) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "apply_vacancies", "profiles"
+  add_foreign_key "apply_vacancies", "vacancies"
   add_foreign_key "profiles", "candidates"
   add_foreign_key "vacancies", "headhunters"
   add_foreign_key "vacancies", "levels"

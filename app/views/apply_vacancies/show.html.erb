@@ -1,0 +1,25 @@
+<h1> Vaga Aplicada <%= @apply_vacancy.vacancy.title %> </h1>
+
+<div>
+    <h3>Mensagem enviada</h3>
+    <P><%= @apply_vacancy.apply_message %></p>
+    <dl>
+        <dt><%= Vacancy.human_attribute_name(:title) %>:</dt>
+        <dd><%= @apply_vacancy.vacancy.title %></dd>
+        <dt><%= Vacancy.human_attribute_name(:job_description) %>:</dt>
+        <dd><%= @apply_vacancy.vacancy.job_description %></dd>
+        <dt><%= Vacancy.human_attribute_name(:skills) %>:</dt>
+        <dd><%= @apply_vacancy.vacancy.skills %></dd>
+        <dt><%= Vacancy.human_attribute_name(:level) %>:</dt>
+        <dd><%= @apply_vacancy.vacancy.level.name %></dd>
+        <dt><%= Vacancy.human_attribute_name(:salary) %>:</dt>
+        <dd><%= number_to_currency @apply_vacancy.vacancy.salary %></dd>
+        <dt><%= Vacancy.human_attribute_name(:registration_date) %>:</dt>
+        <dd><%= l @apply_vacancy.vacancy.registration_date %></dd>
+        <dt><%= Vacancy.human_attribute_name(:address) %>:</dt>
+        <dd><%= @apply_vacancy.vacancy.address %></dd>
+
+    </dl>
+    <%= link_to 'Voltar', vacancy_apply_vacancies_path(@apply_vacancy.vacancy) %>
+
+</div>

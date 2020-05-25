@@ -40,8 +40,7 @@ feature 'Candidate profile' do
     click_on 'Enviar'
 
     #assert
-    # TODO: descomentar linha debaixo
-    # expect(page).to have_content('Foto não pode ficar em branco')
+    expect(page).to have_content('Foto não pode ficar em branco')
     expect(page).to have_content('Nome Completo não pode ficar em branco')
     expect(page).to have_content('Nome Social não pode ficar em branco')
     expect(page).to have_content('Data de Nascimento não pode ficar em branco')
@@ -50,7 +49,6 @@ feature 'Candidate profile' do
     expect(page).to have_content('Experiência não pode ficar em branco')
   end
 
-  # TODO: arrumar teste quando conseguir criar imagem no teste
   scenario 'edit profile' do
     #arrange
     candidate = Candidate.create!(email: 'test@candidate', password: '12345678')
