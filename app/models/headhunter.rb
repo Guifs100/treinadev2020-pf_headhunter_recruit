@@ -5,4 +5,9 @@ class Headhunter < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :vacancies
+
+  validates :email, presence: {message: 'Email não pode ficar em branco'}
+  validates :email, uniqueness: {message: 'Email deve ser único'}
+
+
 end

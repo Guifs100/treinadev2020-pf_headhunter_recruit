@@ -25,12 +25,15 @@
 
       <% if headhunter_signed_in?%>
         <nav>
+          <%= link_to 'Início', root_path %>
+          <%= link_to 'Cadastrar novo nível', new_level_path %>
           <%= link_to 'Cadastrar nova vaga', new_vacancy_path%>
           <%= link_to ' Sair ', destroy_headhunter_session_path, method: :delete  %>
         </nav>
       <% end  %>
       <% if candidate_signed_in? %>
         <nav>
+          <%= link_to 'Início', root_path %>
           <%= link_to 'Ver Perfil', profile_path(current_candidate) %>
           <%= link_to ' Minhas Vagas ', all_apply_jobs_profiles_path %>
           <%= link_to ' Sair ', destroy_candidate_session_path, method: :delete  %>

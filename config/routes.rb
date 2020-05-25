@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     resources :apply_vacancies, only: %i[ index show new create ]
   end
 
+  resources :levels, only: %i[new create]
+
+
   authenticated :candidate do
     root 'candidates_home#index', as: :candidates_home
   end

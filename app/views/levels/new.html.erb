@@ -1,0 +1,17 @@
+<h1>Novo Nível</h1>
+
+<% if @level.errors.any?%>
+  <ul>
+    <%= @level.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<!-- TODO: usar o I18n-->
+<%= form_with model: @level, local: true do |f|%>
+  <%= f.label :name, 'Nome do nível da vaga'%>
+  <%= f.text_field :name %>
+
+  <%= f.submit 'Enviar' %>
+<% end %>

@@ -33,22 +33,6 @@ feature 'Headhunter authentication' do
 
     end
 
-    # TODO: não aparecer logar quando logado  como headhunter ou candidate
-    xscenario 'and email is unique' do
-      
-    end
   end
 
-  xcontext 'log in' do
-    scenario 'successfully' do
-      
-      #arrange
-      
-      #act
-      visit root_path
-      #assert
-      
-      expect(page).to have_content('Bem vindo ao Headhunter Recruit')
-    end
-  end
 end
