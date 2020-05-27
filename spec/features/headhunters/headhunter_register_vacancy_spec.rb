@@ -59,28 +59,4 @@ feature 'Headhunter register vacancy' do
     expect(page).to have_content('Data limite da inscrição não pode ficar em branco')
     expect(page).to have_content('Endereço não pode ficar em branco')
   end
-
-  scenario 'and name can be unique' do
-    #arrange
-    headhunter = create(:headhunter, email: 'test@headhunter.com',
-                                     password: '12345678')
-    level = create(:level, name: 'Júnior')
-    vacancy = create(:vacancy, title:  "Desenvolvedor Junior",
-                               job_description:  "Trabalhar em equipe, proatividade e disciplina",
-                               skills:  "Ruby, Rails, Banco de Dados",
-                               salary:  1200,
-                               level: level,
-                               registration_date: 10.days.from_now,
-                               address:  "Av. Paulista, 1234 SP",
-                               headhunter: headhunter)
-
-    #act
-    login_as headhunter, scope: :headhunter
-    visit root_path
-    click_on 'Ver Minhas Vagas'
-    
-    expect(page).to have_content(vacancy.title)
-    expect(page).to have_content(vacancy.job_description)
-    expect(page).to have_content(vacancy.level.name)
-  end
 end

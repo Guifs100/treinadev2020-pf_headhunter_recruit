@@ -1,5 +1,6 @@
 class VacanciesController < ApplicationController
-  # before_action 
+  before_action :authorized_headhunter, only: %i[ headhunter_vacancies ] 
+  before_action :authorized_candidate, only: %i[ search ] 
 
   def show
     id = params[:id]
