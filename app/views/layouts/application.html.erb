@@ -32,12 +32,14 @@
         </nav>
       <% end  %>
       <% if candidate_signed_in? %>
-        <nav>
-          <%= link_to 'Início', root_path %>
-          <%= link_to 'Ver Perfil', profile_path(current_candidate) %>
-          <%= link_to ' Minhas Vagas ', all_apply_jobs_profiles_path %>
-          <%= link_to ' Sair ', destroy_candidate_session_path, method: :delete  %>
-        </nav>
+        <%# if current_candidate.profile.present? %>
+          <nav>
+            <%= link_to 'Início', root_path %>
+            <%= link_to 'Ver Perfil', profile_path(current_candidate) %>
+            <%= link_to ' Minhas Vagas ', all_apply_jobs_profiles_path %>
+            <%= link_to ' Sair ', destroy_candidate_session_path, method: :delete  %>
+          </nav>
+        <%# end %>
       <% end %>
 
     <%= yield %>

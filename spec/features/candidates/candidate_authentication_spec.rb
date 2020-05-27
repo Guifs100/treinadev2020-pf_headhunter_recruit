@@ -15,7 +15,6 @@ feature 'Candidate authentication' do
       click_on 'Cadastrar'
 
       #Assert
-      expect(page).to have_content('Login efetuado com sucesso. Se não foi autorizado, a confirmação será enviada por e-mail.')
       expect(Candidate.count).to eq 1
 
 

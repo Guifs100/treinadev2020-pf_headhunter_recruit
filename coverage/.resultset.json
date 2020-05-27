@@ -123,16 +123,26 @@
         "lines": [
           1,
           1,
-          9,
           null,
-          9,
+          1,
+          6,
           null,
-          9,
-          3,
+          6,
+          null,
+          6,
+          0,
           null,
           null,
           null,
           null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          11,
+          5,
+          5,
           null,
           null,
           null,
@@ -229,6 +239,8 @@
       "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/controllers/profiles_controller.rb": {
         "lines": [
           1,
+          1,
+          null,
           null,
           1,
           3,
@@ -236,7 +248,7 @@
           null,
           null,
           1,
-          3,
+          5,
           null,
           null,
           1,
@@ -277,6 +289,12 @@
           3,
           null,
           null,
+          null,
+          null,
+          1,
+          5,
+          0,
+          0,
           null,
           null,
           null
@@ -331,6 +349,6 @@
         }
       }
     },
-    "timestamp": 1590375153
+    "timestamp": 1590606322
   }
 }

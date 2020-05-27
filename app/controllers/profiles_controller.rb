@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  before_action :profile_presence, only: %i[show edit all_apply_jobs]
+
 
   def show
     id = params[:id]
@@ -49,4 +51,10 @@ class ProfilesController < ApplicationController
                                     :description, :experience)
   end
 
+  def profile_presence
+    unless current_candidate.profile.present?
+      flash[:notice] = 'Precisa Completar o perfil!'
+      redirect_to new_profile_path
+    end
+  end
 end

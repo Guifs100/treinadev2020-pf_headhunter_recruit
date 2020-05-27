@@ -87,4 +87,15 @@ feature 'Candidate profile' do
     expect(page).to have_content('Descrição: Dedicado e apaixonado por máquinas')
     expect(page).to have_content('Experiência: Dev junior na google por 2 anos')
   end
+
+  scenario 'and must fill profile' do
+    candidate = Candidate.create!(email: 'test@candidate', password: '12345678')
+
+    #act
+    login_as candidate, scope: :candidate
+    visit root_path
+    click_on 'Início'
+
+    expect(page).to have_content('Precisa Completar o perfil!')
+  end
 end
