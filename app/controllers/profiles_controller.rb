@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_action :authorized_candidate, only: %i[new create edit update all_apply_jobs]
   before_action :profile_presence, only: %i[show edit all_apply_jobs]
 
   def show
@@ -49,7 +50,8 @@ class ProfilesController < ApplicationController
   end
 
   def profile_presence
-    unless current_candidate.profile.present?
+    # unless current_candidate.profile.present? && headhunter_signed_in?
+    unless current_candidate.profile.present? 
       flash[:notice] = 'Precisa Completar o perfil!'
       redirect_to new_profile_path
     end

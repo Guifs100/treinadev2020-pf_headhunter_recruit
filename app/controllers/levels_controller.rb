@@ -1,5 +1,6 @@
 class LevelsController < ApplicationController
-
+  before_action :authorized_headhunter
+  
   def new
     @level = Level.new
   end

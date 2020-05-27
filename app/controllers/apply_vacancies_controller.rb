@@ -1,5 +1,5 @@
 class ApplyVacanciesController < ApplicationController
-  
+  before_action :authorized_candidate
   
   
   def show    
@@ -14,7 +14,7 @@ class ApplyVacanciesController < ApplicationController
   def create
     @apply_vacancy = ApplyVacancy.new(apply_vacancy_params)
     @vacancy = Vacancy.find(params[:vacancy_id])
-    @profile = Profile.find( current_candidate.id)
+    @profile = Profile.find( current_candidate.profile.id)
     @apply_vacancy.profile = @profile
     @apply_vacancy.vacancy =  @vacancy
     if @apply_vacancy.save

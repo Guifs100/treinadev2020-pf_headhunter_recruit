@@ -1,5 +1,6 @@
 class CandidatesHomeController < ApplicationController
   before_action :profile_presence
+  before_action :authorized_candidate
 
   def index
     @candidate = current_candidate
@@ -9,7 +10,6 @@ class CandidatesHomeController < ApplicationController
     unless @candidate.profile.present?
       redirect_to new_profile_path
     end
-
   end
 
   private
