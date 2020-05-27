@@ -10,17 +10,14 @@ class CandidatesHomeController < ApplicationController
       redirect_to new_profile_path
     end
 
-
-
   end
 
   private
-  
+
   def profile_presence
     unless current_candidate.profile.present?
       flash[:notice] = 'Precisa Completar o perfil!'
       redirect_to new_profile_path
     end
   end
-
 end

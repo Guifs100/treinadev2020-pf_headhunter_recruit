@@ -4,8 +4,6 @@ feature 'Candidate authentication' do
   context 'log in' do
     scenario 'successufully' do
       #Arrange
-      
-
       #Act
       visit root_path
       click_on 'Criar uma conta Candidato'
@@ -16,7 +14,6 @@ feature 'Candidate authentication' do
 
       #Assert
       expect(Candidate.count).to eq 1
-
 
     end
 
@@ -32,8 +29,5 @@ feature 'Candidate authentication' do
       expect(page).to have_content('Senha não pode ficar em branco')
 
     end
-
-    
   end
-
 end

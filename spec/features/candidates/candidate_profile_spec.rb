@@ -28,7 +28,6 @@ feature 'Candidate profile' do
     expect(page).to have_content('Formação: ADS na fatec-SP')
     expect(page).to have_content('Descrição: Determinado, proativo e trabalho em equipe')
     expect(page).to have_content('Experiência: Nenhuma')
-
   end
 
   scenario 'and must fill profile' do
@@ -59,7 +58,6 @@ feature 'Candidate profile' do
                               description: "Formado na Fatec",
                               experience: "Nenhuma",
                               photo: fixture_file_upload(Rails.root.join('spec', 'support', 'assets', 'perfil.jpg'), 'image/jpg'))
-
 
     #act
     login_as candidate, scope: :candidate

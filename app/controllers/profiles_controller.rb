@@ -1,7 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :profile_presence, only: %i[show edit all_apply_jobs]
 
-
   def show
     id = params[:id]
     @profile = Profile.find(id)
@@ -24,7 +23,6 @@ class ProfilesController < ApplicationController
 
   def edit
     @profile = Profile.find(params[:id])
-    
   end
 
   def update
@@ -40,7 +38,6 @@ class ProfilesController < ApplicationController
   def all_apply_jobs
     @profile = Profile.find(current_candidate.id)
     @apply_vacancies = ApplyVacancy.where('profile_id = ?', @profile.id)
-    # {where('title LIKE ? AND status = ?', "%#{query}%", Vacancy.statuses[:available] )
   end
 
   private
