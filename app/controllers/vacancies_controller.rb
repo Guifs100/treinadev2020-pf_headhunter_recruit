@@ -1,7 +1,5 @@
 class VacanciesController < ApplicationController
-
-  def index
-  end
+  # before_action 
 
   def show
     id = params[:id]
@@ -29,9 +27,13 @@ class VacanciesController < ApplicationController
   def search
     @vacancies = Vacancy.search(params[:query])
     @candidate = current_candidate
-    render :index
+    render 'candidates_home/index'
   end
 
+  def headhunter_vacancies
+    @headhunter = current_headhunter.id
+    @vacancies = Vacancy.register_vacancies(@headhunter)
+  end
 
   private 
 
@@ -41,5 +43,4 @@ class VacanciesController < ApplicationController
                                     :registration_date,
                                     :address, :level_id)
   end
-
 end

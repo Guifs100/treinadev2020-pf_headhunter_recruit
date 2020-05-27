@@ -15,4 +15,5 @@ class Vacancy < ApplicationRecord
   scope :search, ->(query) {where('title LIKE ? AND status = ?', "%#{query}%", Vacancy.statuses[:available] )
                               .or(where('job_description LIKE ? AND status = ?', "%#{query}%", Vacancy.statuses[:available] ))}                              
 
+  scope :register_vacancies, ->(headhunter) {where('headhunter_id = ? ', headhunter)}
 end

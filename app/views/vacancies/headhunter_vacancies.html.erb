@@ -1,17 +1,7 @@
-<h1>Olá Candidato</h1>
-
-
-<%= form_with url: search_vacancies_path, method: :get do |f| %>
-  <%= f.label :query, 'Procurar Vagas'%>
-  <%= f.search_field :query %>
-  <%= f.submit 'Buscar' %>
-<% end %>
-
-
-<h1>Vagas Disponíveis</h1>
+<h1>Vagas Cadastradas</h1>
 
 <% @vacancies.each do |vacancy| %>
-  <div>
+  <div id="vacancy-<%= vacancy.id %>">
     <dl>
       <dt> Vaga </dt>
       <dd><%= vacancy.title %></dd>
