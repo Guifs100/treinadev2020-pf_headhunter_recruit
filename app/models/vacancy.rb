@@ -12,8 +12,14 @@ class Vacancy < ApplicationRecord
 
   enum status: {available: 0, unavailable: 5}
 
+  # scope :index_candidate, -> (profile) {joins(:apply_vacancies).where.not('profile_id = ?', profile)}
+  # scope :index_candidate, -> (profile) {where('status = ?', Vacancy.statuses[:available])
+  #                                         .joins(:apply_vacancies).where.not('profile_id = ?', profile)
+  #                                           .or(where('status = ?', Vacancy.statuses[:available])
+  #                                             .joins(:apply_vacancies).where('profile_id = NULL '))}
+
   scope :search, ->(query) {where('title LIKE ? AND status = ?', "%#{query}%", Vacancy.statuses[:available] )
-                              .or(where('job_description LIKE ? AND status = ?', "%#{query}%", Vacancy.statuses[:available] ))}                              
+                              .or(where('job_description LIKE ? AND status = ?', "%#{query}%", Vacancy.statuses[:available] ))}
 
   scope :register_vacancies, ->(headhunter) {where('headhunter_id = ? ', headhunter)}
 end

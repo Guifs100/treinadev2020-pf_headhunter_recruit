@@ -3,12 +3,9 @@ require 'rails_helper'
 feature 'Headhunter register vacancy' do
   scenario 'successfully' do
     #arrange
-    # headhunter = create(:headhunter)
     headhunter = Headhunter.create( email: 'test@headhunter.com',
                                     password: '12345678')
     level = create(:level, name: 'Júnior')
-    # level = Level.create(name: 'Júnior')
-
 
     #act
     login_as headhunter, scope: :headhunter
@@ -37,18 +34,14 @@ feature 'Headhunter register vacancy' do
 
   scenario 'and must fill in all fields' do
     #arrange
-    # headhunter = create(:headhunter)
     headhunter = create(:headhunter, email: 'test@headhunter.com',
                                      password: '12345678')
     level = create(:level, name: 'Júnior')
-    # level = Level.create(name: 'Júnior')
-
 
     #act
     login_as headhunter, scope: :headhunter
     visit root_path
     click_on 'Cadastrar nova vaga'
-    
     click_on 'Enviar'
 
     #assert

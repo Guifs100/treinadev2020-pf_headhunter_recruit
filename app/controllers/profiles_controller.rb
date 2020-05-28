@@ -37,7 +37,7 @@ class ProfilesController < ApplicationController
   end
 
   def all_apply_jobs
-    @profile = Profile.find(current_candidate.id)
+    @profile = Profile.find(current_candidate.profile.id)
     @apply_vacancies = ApplyVacancy.where('profile_id = ?', @profile.id)
   end
 

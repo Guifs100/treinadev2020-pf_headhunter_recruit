@@ -18,6 +18,22 @@
         <dd><%= @vacancy.address %></dd>
 
     </dl>
-    <%= link_to 'Candidatar', new_vacancy_apply_vacancy_path(@vacancy) %>
+    <% if candidate_signed_in? %>
+      <%= link_to 'Candidatar', new_vacancy_apply_vacancy_path(@vacancy) %>
+    <% end %>
+
+    <% if headhunter_signed_in? && current_headhunter == @vacancy.headhunter %>
+			<p>Alo</p>
+				<%  @apply_vacancies.each do |applied| %>
+					<dl>
+						<dt> Nome Completo: </dt>
+						<dd><%= applied.profile.full_name %></dd>
+						<dt> Nome Social: </dt>
+						<dd><%= applied.profile.social_name %></dd>
+						<dt> Mensagem: </dt>
+						<dd><%= applied.apply_message %></dd>
+					</dl>
+				<% end %>
+    <% end %>
 
 </div>

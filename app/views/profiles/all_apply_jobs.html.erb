@@ -1,7 +1,7 @@
 <h1> Minhas Vagas Aplicadas </h1>
 
 <% @apply_vacancies.each do |applied| %>
-  <div>
+  <div id="applied-vacancy-<%= applied.id%>" >
     <dl>
       <dt> Mensagem enviada </dt>
       <dd><%= applied.apply_message %></dd>

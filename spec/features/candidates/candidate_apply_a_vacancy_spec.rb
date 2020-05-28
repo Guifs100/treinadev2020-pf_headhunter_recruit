@@ -62,15 +62,59 @@ feature 'Candidate apply a vacancy' do
                               description: "Formado na Fatec",
                               experience: "Nenhuma",
                               photo: fixture_file_upload(Rails.root.join('spec', 'support', 'assets', 'perfil.jpg'), 'image/jpg'))
-    apply_vagancy = ApplyVacancy.create!(profile: profile, vacancy: vacancy,
+    apply_vacancy = ApplyVacancy.create!(profile: profile, vacancy: vacancy,
                                          apply_message: 'Tenho 5 anos de experiência em Ruby on Rails' )
     
     login_as candidate, scope: :candidate
     visit root_path    
     click_on 'Minhas Vagas'
 
-    expect(page).to have_content(apply_vagancy.apply_message)
-    expect(page).to have_content(apply_vagancy.vacancy.title)
-    expect(page).to have_content(apply_vagancy.vacancy.job_description)
+    expect(page).to have_content(apply_vacancy.apply_message)
+    expect(page).to have_content(apply_vacancy.vacancy.title)
+    expect(page).to have_content(apply_vacancy.vacancy.job_description)
+  end
+
+  xscenario 'cannot apply to the same vacancy' do
+    level = create(:level, name: 'Junior')
+    other_level = create(:level, name: 'Senior')
+    headhunter = create(:headhunter)
+    vacancy = Vacancy.create!( title: "Desenvolvedor Junior",
+                               job_description: "Trabalhar em equipe e disciplina",
+                               skills: "Ruby, Rails, Banco de Dados",
+                               salary: 1200,
+                               level: level,
+                               registration_date: 10.days.from_now,
+                               address: "Av. Paulista, 1234 SP",
+                               headhunter: headhunter,
+                               status: 0)
+    other_vacancy = Vacancy.create!( title: "Programador Senior",
+                                     job_description: "Proatividade e compromisso para desenvolver com a equipe",
+                                     skills: "SQL, C, Java",
+                                     salary: 2400,
+                                     level: other_level,
+                                     registration_date: 10.days.from_now,
+                                     address: "Av. Paulista, 1234 SP",
+                                     headhunter: headhunter,
+                                     status: 0)
+    candidate = Candidate.create!(email: 'teste@candidate.com', password: '12345678')
+    profile = Profile.create!(candidate: candidate, full_name: "Fulano Silva", 
+                              social_name: "Fulano",
+                              birth_date: "15/11/1996",
+                              formation: "Análise e desenvolvimento de sistemas",
+                              description: "Formado na Fatec",
+                              experience: "Nenhuma",
+                              photo: fixture_file_upload(Rails.root.join('spec', 'support', 'assets', 'perfil.jpg'), 'image/jpg'))
+    apply_vacancy = ApplyVacancy.create!(profile: profile, vacancy: vacancy,
+                                         apply_message: 'Tenho 5 anos de experiência em Ruby on Rails' )
+    
+    login_as candidate, scope: :candidate
+    visit root_path    
+
+    expect(page).not_to have_content(vacancy.title)
+    expect(page).not_to have_content(vacancy.job_description)
+    expect(page).not_to have_content(vacancy.level.name)
+    expect(page).to have_content(other_vacancy.title)
+    expect(page).to have_content(other_vacancy.job_description)
+    expect(page).to have_content(other_vacancy.level.name)
   end
 end

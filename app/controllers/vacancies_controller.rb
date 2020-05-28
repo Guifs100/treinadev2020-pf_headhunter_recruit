@@ -5,6 +5,7 @@ class VacanciesController < ApplicationController
   def show
     id = params[:id]
     @vacancy = Vacancy.find(id)
+    @apply_vacancies =  ApplyVacancy.applied_vacancies(@vacancy)
   end
 
   def new
@@ -44,4 +45,5 @@ class VacanciesController < ApplicationController
                                     :registration_date,
                                     :address, :level_id)
   end
+
 end
