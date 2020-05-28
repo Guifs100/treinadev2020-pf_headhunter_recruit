@@ -41,7 +41,7 @@ feature 'Candidate apply a vacancy' do
     expect(page).to have_content(vacancy.level.name)
   end
 
-  xscenario 'message cannot be blank' do
+  scenario 'message cannot be blank' do
     level = create(:level, name: 'Junior')
     other_level = create(:level, name: 'Senior')
     headhunter = create(:headhunter)
@@ -72,6 +72,7 @@ feature 'Candidate apply a vacancy' do
     click_on 'Enviar'
 
     expect(page).to have_content('Mensagem não pode ficar em branco')
+    expect(current_path).to eq(new_vacancy_apply_vacancy_path(vacancy.id))
     
   end
 

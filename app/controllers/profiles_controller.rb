@@ -5,7 +5,6 @@ class ProfilesController < ApplicationController
   def show
     id = params[:id]
     @profile = Profile.find(id)
-    
     @comments = search_comments_profile
   end
 
