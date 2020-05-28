@@ -22,7 +22,7 @@
       <%= link_to 'Candidatar', new_vacancy_apply_vacancy_path(@vacancy) %>
     <% end %>
 
-    <% if headhunter_signed_in? && current_headhunter == @vacancy.headhunter %>
+    <% if headhunter_signed_in? %>
         <%  @apply_vacancies.each do |applied| %>
 				  <div id= "applied-vacancy-<%= applied.id %>">
             <dl>
