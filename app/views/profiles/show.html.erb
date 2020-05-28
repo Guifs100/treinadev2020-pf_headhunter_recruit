@@ -17,5 +17,24 @@
 
 </dl>
 
-<%= link_to 'Editar Perfil', edit_profile_path(@profile)%>
+<% if candidate_signed_in? %>
+    <%= link_to 'Editar Perfil', edit_profile_path(@profile)%>
+<% end %>
+
+<% if headhunter_signed_in? %>
+    <%= link_to 'Novo Comentário', new_profile_comment_path(@profile)%>
+    <h1>Comentários</h1>
+    <% @comments.each do |comment| %>
+      <div id= "comment-<%= comment.id %>">
+        <dl>
+          <dt> Comentário: </dt>
+          <dd><%= comment.text %></dd>
+          <dt> Data e Horário: </dt>
+          <dd> <%= I18n.l(comment.created_at.to_date) %> ás <%= comment.created_at.strftime("%H:%M")%></dd>
+          
+        </dl>
+      </div>
+    <% end %>
+<% end %>
+
 <%= link_to 'Voltar', root_path%>

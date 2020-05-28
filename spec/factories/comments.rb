@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :comment do
     text { "MyString" }
-    headhunter { nil }
-    profile { nil }
+    headhunter
+    profile
   end
 end

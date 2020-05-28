@@ -3,7 +3,7 @@
 <% if @apply_vacancy.errors.any?%>
   <ul>
     <%= @apply_vacancy.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+      <li> <%= message %> </li>
     <% end %>
   </ul>
 <% end %>

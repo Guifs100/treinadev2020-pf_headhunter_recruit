@@ -13,14 +13,15 @@ Rails.application.routes.draw do
   end
 
   resources :levels, only: %i[new create]
-
-
+  
+  
   authenticated :candidate do
     root 'candidates_home#index', as: :candidates_home
   end
-
+  
   resources :profiles, only: %i[show new create edit update] do
     get 'all_apply_jobs', on: :collection
+    resources :comments, only: %i[new create]
   end
 
   root 'home#index'

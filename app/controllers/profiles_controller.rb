@@ -5,6 +5,8 @@ class ProfilesController < ApplicationController
   def show
     id = params[:id]
     @profile = Profile.find(id)
+    
+    @comments = search_comments_profile
   end
 
   def new
@@ -55,6 +57,13 @@ class ProfilesController < ApplicationController
         flash[:notice] = 'Precisa Completar o perfil!'
         redirect_to new_profile_path
       end
+    end
+  end
+
+  def search_comments_profile
+    if headhunter_signed_in?
+      @profile = Profile.find(params[:id])
+      @comments = Comment.search_comments(@profile.id, current_headhunter.id)
     end
   end
 end

@@ -1,0 +1,17 @@
+<h1> Envie um comentário para o perfil </h1>
+
+<% if @comment.errors.any? %>
+  <ul>
+    <%= @comment.errors.full_messages.each do |message|%>
+      <li> <%= message %> </li>
+    <% end%>
+  </ul>
+<% end%>
+
+<!-- TODO: usar o I18n no new de comments-->
+<%= form_with model: [@profile, @comment], local: true do |f| %>
+  <%= f.label :text, 'Comentário'%>
+  <%= f.text_field :text %>
+
+  <%= f.submit 'Enviar' %>
+<% end %>

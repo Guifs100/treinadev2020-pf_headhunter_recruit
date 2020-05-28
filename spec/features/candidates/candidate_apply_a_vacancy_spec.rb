@@ -41,6 +41,40 @@ feature 'Candidate apply a vacancy' do
     expect(page).to have_content(vacancy.level.name)
   end
 
+  xscenario 'message cannot be blank' do
+    level = create(:level, name: 'Junior')
+    other_level = create(:level, name: 'Senior')
+    headhunter = create(:headhunter)
+    vacancy = Vacancy.create!( title: "Desenvolvedor Junior",
+                               job_description: "Trabalhar em equipe e disciplina",
+                               skills: "Ruby, Rails, Banco de Dados",
+                               salary: 1200,
+                               level: level,
+                               registration_date: 10.days.from_now,
+                               address: "Av. Paulista, 1234 SP",
+                               headhunter: headhunter,
+                               status: 0)
+    candidate = Candidate.create!(email: 'teste@candidate.com', password: '12345678')
+    profile = Profile.create!(candidate: candidate, full_name: "Fulano Silva", 
+                              social_name: "Fulano",
+                              birth_date: "15/11/1996",
+                              formation: "Análise e desenvolvimento de sistemas",
+                              description: "Formado na Fatec",
+                              experience: "Nenhuma",
+                              photo: fixture_file_upload(Rails.root.join('spec', 'support', 'assets', 'perfil.jpg'), 'image/jpg'))
+    
+    login_as candidate, scope: :candidate
+    visit root_path
+    within "div#vacancy-#{vacancy.id}" do
+      click_on 'Ver Detalhes'
+    end
+    click_on 'Candidatar'
+    click_on 'Enviar'
+
+    expect(page).to have_content('Mensagem não pode ficar em branco')
+    
+  end
+
   scenario 'see applied vacancies' do
     level = create(:level, name: 'Junior')
     other_level = create(:level, name: 'Senior')

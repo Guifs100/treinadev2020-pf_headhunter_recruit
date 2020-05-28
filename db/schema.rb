@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_25_003008) do
+ActiveRecord::Schema.define(version: 2020_05_28_165318) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -53,6 +53,16 @@ ActiveRecord::Schema.define(version: 2020_05_25_003008) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_candidates_on_email", unique: true
     t.index ["reset_password_token"], name: "index_candidates_on_reset_password_token", unique: true
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "text"
+    t.integer "headhunter_id", null: false
+    t.integer "profile_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["headhunter_id"], name: "index_comments_on_headhunter_id"
+    t.index ["profile_id"], name: "index_comments_on_profile_id"
   end
 
   create_table "headhunters", force: :cascade do |t|
@@ -105,6 +115,8 @@ ActiveRecord::Schema.define(version: 2020_05_25_003008) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "apply_vacancies", "profiles"
   add_foreign_key "apply_vacancies", "vacancies"
+  add_foreign_key "comments", "headhunters"
+  add_foreign_key "comments", "profiles"
   add_foreign_key "profiles", "candidates"
   add_foreign_key "vacancies", "headhunters"
   add_foreign_key "vacancies", "levels"

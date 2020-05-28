@@ -59,6 +59,17 @@
           null
         ]
       },
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/models/comment.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          4,
+          null,
+          null
+        ]
+      },
       "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/models/level.rb": {
         "lines": [
           1,
@@ -129,7 +140,7 @@
           null,
           null,
           1,
-          6,
+          8,
           0,
           0,
           null,
@@ -275,8 +286,10 @@
           1,
           null,
           1,
-          4,
-          4,
+          6,
+          6,
+          null,
+          6,
           null,
           null,
           1,
@@ -322,12 +335,18 @@
           null,
           null,
           1,
-          null,
-          6,
+          8,
           5,
           0,
           0,
           null,
+          null,
+          null,
+          null,
+          1,
+          6,
+          3,
+          3,
           null,
           null,
           null
@@ -367,8 +386,37 @@
           null,
           null
         ]
+      },
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/controllers/comments_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1590684337
+    "timestamp": 1590698907
   }
 }
