@@ -51,9 +51,11 @@ class ProfilesController < ApplicationController
 
   def profile_presence
     # unless current_candidate.profile.present? && headhunter_signed_in?
-    unless current_candidate.profile.present? 
-      flash[:notice] = 'Precisa Completar o perfil!'
-      redirect_to new_profile_path
+    if candidate_signed_in?
+      unless current_candidate.profile.present? 
+        flash[:notice] = 'Precisa Completar o perfil!'
+        redirect_to new_profile_path
+      end
     end
   end
 end

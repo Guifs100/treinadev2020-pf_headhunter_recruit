@@ -23,17 +23,21 @@
     <% end %>
 
     <% if headhunter_signed_in? && current_headhunter == @vacancy.headhunter %>
-			<p>Alo</p>
-				<%  @apply_vacancies.each do |applied| %>
-					<dl>
-						<dt> Nome Completo: </dt>
-						<dd><%= applied.profile.full_name %></dd>
-						<dt> Nome Social: </dt>
-						<dd><%= applied.profile.social_name %></dd>
-						<dt> Mensagem: </dt>
-						<dd><%= applied.apply_message %></dd>
-					</dl>
-				<% end %>
+        <%  @apply_vacancies.each do |applied| %>
+				  <div id= "applied-vacancy-<%= applied.id %>">
+            <dl>
+              <dt> Nome Completo: </dt>
+              <dd><%= applied.profile.full_name %></dd>
+              <dt> Nome Social: </dt>
+              <dd><%= applied.profile.social_name %></dd>
+              <dt> Mensagem: </dt>
+              <dd><%= applied.apply_message %></dd>
+              <dt> Formação: </dt>
+              <dd><%= applied.profile.formation %></dd>
+            </dl>
+            <%= link_to 'Ver Perfil', profile_path(applied.profile.id)%>
+				  </div>
+        <% end %>
     <% end %>
 
 </div>
