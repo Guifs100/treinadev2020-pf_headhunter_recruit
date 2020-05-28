@@ -50,7 +50,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_presence
-    # unless current_candidate.profile.present? && headhunter_signed_in?
     if candidate_signed_in?
       unless current_candidate.profile.present? 
         flash[:notice] = 'Precisa Completar o perfil!'
