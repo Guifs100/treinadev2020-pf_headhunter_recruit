@@ -70,7 +70,7 @@ feature 'Headhunter set star to candidate' do
     expect(current_path).to eq(profile_path(profile.id))
   end
 
-  scenario 'and view in vacancy' do
+  scenario 'and view favorite in vacancy' do
     headhunter = create(:headhunter, email: 'test@headhunter.com',
                                      password: '12345678')
     candidate = create(:candidate, email: 'test@candidate.com',
