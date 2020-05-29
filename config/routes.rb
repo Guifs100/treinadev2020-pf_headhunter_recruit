@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :vacancies, only: %i[ show new create] do
     get 'search', on: :collection
     get 'headhunter_vacancies', on: :collection
-    resources :apply_vacancies, only: %i[ index show new create ]
+    resources :apply_vacancies, only: %i[ index show new create ] do
+      resources :reject_apply_vacancies, only: %i[ new create]
+    end
   end
 
   resources :levels, only: %i[new create]

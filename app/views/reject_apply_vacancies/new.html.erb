@@ -1,0 +1,18 @@
+<h1>Envie o feedback paraa o candidato </h1>
+
+<% if @reject_apply_vacancy.errors.any?%>
+  <ul>
+    <%= @reject_apply_vacancy.errors.full_messages.each do |message| %>
+      <li> <%= message %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<!-- TODO: usar o I18n-->
+<%= form_with model: [@vacancy, @apply_vacancy, @reject_apply_vacancy], local: true do |f|%>
+
+  <%= f.label :feedback, 'Feedback'%>
+  <%= f.text_field :feedback %>
+
+  <%= f.submit 'Enviar' %>
+<% end %>

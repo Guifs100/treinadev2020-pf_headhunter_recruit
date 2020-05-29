@@ -57,7 +57,7 @@
           null,
           1,
           null,
-          9,
+          13,
           null,
           null
         ]
@@ -70,7 +70,7 @@
           null,
           1,
           null,
-          13,
+          12,
           null,
           null
         ]
@@ -103,13 +103,23 @@
           null
         ]
       },
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/models/reject_apply_vacancy.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
       "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/models/star_profile.rb": {
         "lines": [
           1,
           1,
           1,
           null,
-          15,
+          14,
           null,
           null
         ]
@@ -157,7 +167,7 @@
           null,
           null,
           1,
-          16,
+          20,
           0,
           0,
           null,
@@ -213,9 +223,9 @@
           1,
           null,
           1,
-          8,
-          8,
-          8,
+          12,
+          12,
+          12,
           null,
           null,
           1,
@@ -303,10 +313,10 @@
           1,
           null,
           1,
-          15,
-          15,
-          15,
-          15,
+          14,
+          14,
+          14,
+          14,
           null,
           null,
           1,
@@ -352,7 +362,7 @@
           null,
           null,
           1,
-          17,
+          16,
           5,
           0,
           0,
@@ -361,16 +371,16 @@
           null,
           null,
           1,
-          15,
-          12,
-          12,
+          14,
+          11,
+          11,
           null,
           null,
           null,
           1,
-          15,
-          12,
-          12,
+          14,
+          11,
+          11,
           null,
           null,
           null
@@ -407,6 +417,38 @@
           null,
           1,
           1,
+          null,
+          null
+        ]
+      },
+      "/home/guifs/workspace/meu_projeto/curso/treinadev03/treinadev2020-pf_headhunter_recruit/app/controllers/reject_apply_vacancies_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
           null,
           null
         ]
@@ -468,6 +510,6 @@
         ]
       }
     },
-    "timestamp": 1590774267
+    "timestamp": 1590788679
   }
 }

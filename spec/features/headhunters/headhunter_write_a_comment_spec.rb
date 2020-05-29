@@ -16,12 +16,11 @@ feature 'Headhunter write a comment' do
     visit root_path
     click_on 'Ver Minhas Vagas'
     within "div#vacancy-#{vacancy.id}" do
-    click_on 'Ver Detalhes'
+      click_on 'Ver Detalhes'
     end
     within "div#applied-vacancy-#{apply_vacancy.id}" do
-    click_on 'Ver Perfil'
+      click_on 'Ver Perfil'
     end
-    # visit profile_path(apply_vacancy.profile.id)
     click_on 'Novo Comentário'
     fill_in 'Comentário', with: 'Perfil interessante!'
     click_on 'Enviar'

@@ -21,25 +21,27 @@
     <% if candidate_signed_in? %>
       <%= link_to 'Candidatar', new_vacancy_apply_vacancy_path(@vacancy) %>
     <% end %>
-
+<!-- TODO: Filtrar para sumir os rejeitados-->
     <% if headhunter_signed_in? %>
         <%  @apply_vacancies.each do |applied| %>
-				  <div id= "applied-vacancy-<%= applied.id %>">
-            <dl>
-              <dt> Nome Completo: </dt>
-              <dd><%= applied.profile.full_name %></dd>
-              <% if applied.profile.star_profile.present?%>
-                  <p>Perfil Favorito</p>
-              <% end %>
-              <dt> Nome Social: </dt>
-              <dd><%= applied.profile.social_name %></dd>
-              <dt> Mensagem: </dt>
-              <dd><%= applied.apply_message %></dd>
-              <dt> Formação: </dt>
-              <dd><%= applied.profile.formation %></dd>
-            </dl>
-            <%= link_to 'Ver Perfil', profile_path(applied.profile.id)%>
-				  </div>
+            <div id= "applied-vacancy-<%= applied.id %>">
+              <dl>
+                <dt> Nome Completo: </dt>
+                <dd><%= applied.profile.full_name %></dd>
+                <% if applied.profile.star_profile.present?%>
+                    <p>Perfil Favorito</p>
+                <% end %>
+                <dt> Nome Social: </dt>
+                <dd><%= applied.profile.social_name %></dd>
+                <dt> Mensagem: </dt>
+                <dd><%= applied.apply_message %></dd>
+                <dt> Formação: </dt>
+                <dd><%= applied.profile.formation %></dd>
+              </dl>
+              <%= link_to 'Ver Perfil', profile_path(applied.profile.id)%>
+              <%= link_to 'Rejeitar Perfil', new_vacancy_apply_vacancy_reject_apply_vacancy_path(@vacancy.id, applied.id) %>
+
+            </div>
         <% end %>
     <% end %>
 
