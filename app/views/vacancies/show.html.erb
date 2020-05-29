@@ -28,6 +28,9 @@
             <dl>
               <dt> Nome Completo: </dt>
               <dd><%= applied.profile.full_name %></dd>
+              <% if applied.profile.star_profile.present?%>
+                  <p>Perfil Favorito</p>
+              <% end %>
               <dt> Nome Social: </dt>
               <dd><%= applied.profile.social_name %></dd>
               <dt> Mensagem: </dt>

@@ -1,4 +1,14 @@
 <h1> Perfil Cadastrado </h1>
+
+<% if headhunter_signed_in? %>
+  <% if @star_profile.present? %>
+    <%= link_to 'Desfavoritar Perfil', profile_star_profile_path(@profile, @star_profile), method: :delete %>
+      <h1> Perfil Favorito </h1>
+  <% else %>
+    <%= link_to 'Favoritar Perfil', profile_star_profiles_path(@profile), method: :post %>
+  <% end %>
+<% end %>
+
 <dl>
     <p><%= Profile.human_attribute_name(:photo) %>:</p>
     <%= image_tag(@profile.photo, id: 'perfil') %>

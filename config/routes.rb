@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :profiles, only: %i[show new create edit update] do
     get 'all_apply_jobs', on: :collection
     resources :comments, only: %i[new create]
+    resources :star_profiles, only: %i[create destroy]
   end
 
   root 'home#index'
