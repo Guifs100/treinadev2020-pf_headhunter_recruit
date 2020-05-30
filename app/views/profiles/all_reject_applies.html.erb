@@ -1,0 +1,19 @@
+<h1>Rejeições</h1>
+
+<%  @apply_vacancies.each do |applied| %>
+  <div id= "applied-vacancy-<%= applied.id %>">
+    <% if applied.reject_apply_vacancy.apply_vacany.present? %>
+      <dl>
+        <dt> Nome da Vaga: </dt>
+        <dd><%= applied.vacancy.title %></dd>
+        <dt> Nome Social: </dt>
+        <dd><%= applied.profile.social_name %></dd>
+        <dt> Mensagem: </dt>
+        <dd><%= applied.apply_message %></dd>
+        <dt> Formação: </dt>
+        <dd><%= applied.profile.formation %></dd>
+      </dl> 
+    <% end %>
+
+  </div>
+<% end %>

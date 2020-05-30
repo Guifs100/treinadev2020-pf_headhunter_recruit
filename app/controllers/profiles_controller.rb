@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
-  before_action :authorized_candidate, only: %i[new create edit update all_apply_jobs]
-  before_action :profile_presence, only: %i[show edit all_apply_jobs]
+  before_action :authorized_candidate, only: %i[new create edit update all_apply_jobs all_reject_applies]
+  before_action :profile_presence?, only: %i[show edit all_apply_jobs all_reject_applies]
 
   def show
     id = params[:id]
@@ -40,7 +40,12 @@ class ProfilesController < ApplicationController
 
   def all_apply_jobs
     @profile = Profile.find(current_candidate.profile.id)
-    @apply_vacancies = ApplyVacancy.where('profile_id = ?', @profile.id)
+    @apply_vacancies = ApplyVacancy.profile_applies(@profile.id)
+  end
+
+  def all_reject_applies
+    @profile = Profile.find(current_candidate.profile.id)
+    @apply_vacancies = ApplyVacancy.profile_applies(@profile.id)
   end
 
   private
@@ -51,9 +56,9 @@ class ProfilesController < ApplicationController
                                     :description, :experience)
   end
 
-  def profile_presence
+  def profile_presence?
     if candidate_signed_in?
-      unless current_candidate.profile.present? 
+      if current_candidate.profile.blank? 
         flash[:notice] = 'Precisa Completar o perfil!'
         redirect_to new_profile_path
       end

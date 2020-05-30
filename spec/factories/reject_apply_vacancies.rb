@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :reject_apply_vacancy do
-    feedback { "MyString" }
-    headhunter { nil }
-    apply_vacancy { nil }
+    feedback { "Não se enquadra a vaga" }
+    headhunter
+    apply_vacancy 
   end
 end
