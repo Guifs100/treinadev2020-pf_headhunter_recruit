@@ -1,0 +1,24 @@
+<h1>Envie o feedback paraa o candidato </h1>
+
+<% if @proposal.errors.any?%>
+  <ul>
+    <%= @proposal.errors.full_messages.each do |message| %>
+      <li> <%= message %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<!-- TODO: usar o I18n-->
+<%= form_with model: [@vacancy, @apply_vacancy, @proposal], local: true do |f|%>
+
+  <%= f.label :start_date, 'Data de Início'%>
+  <%= f.date_field :start_date %>
+  <%= f.label :salary, 'Salário'%>
+  <%= f.number_field :salary %>
+  <%= f.label :benefits, 'Benefícios'%>
+  <%= f.text_field :benefits %>
+  <%= f.label :job_functions, 'Funções'%>
+  <%= f.text_field :job_functions %>
+
+  <%= f.submit 'Enviar' %>
+<% end %>

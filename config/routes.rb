@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get 'headhunter_vacancies', on: :collection
     resources :apply_vacancies, only: %i[ index show new create ] do
       resources :reject_apply_vacancies, only: %i[ new create]
+      resources :proposals, only: %i[ show new create]
     end
   end
 

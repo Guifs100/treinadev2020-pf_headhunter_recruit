@@ -37,9 +37,10 @@
                 <dd><%= applied.apply_message %></dd>
                 <dt> Formação: </dt>
                 <dd><%= applied.profile.formation %></dd>
-              </dl>
+              </dl> 
               <%= link_to 'Ver Perfil', profile_path(applied.profile.id)%>
               <%= link_to 'Rejeitar Perfil', new_vacancy_apply_vacancy_reject_apply_vacancy_path(@vacancy.id, applied.id) %>
+              <%= link_to 'Enviar Proposta', new_vacancy_apply_vacancy_proposal_path(@vacancy.id, applied.id) %>
 
             </div>
         <% end %>

@@ -1,0 +1,32 @@
+<h1>Vaga da Proposta</h1>
+<dl>
+  <dt><%= Vacancy.human_attribute_name(:title) %>:</dt>
+  <dd><%= @vacancy.title %></dd>
+  <dt><%= Vacancy.human_attribute_name(:job_description) %>:</dt>
+  <dd><%= @vacancy.job_description %></dd>
+  <dt><%= Vacancy.human_attribute_name(:skills) %>:</dt>
+  <dd><%= @vacancy.skills %></dd>
+  <dt><%= Vacancy.human_attribute_name(:level) %>:</dt>
+  <dd><%= @vacancy.level.name %></dd>
+  <dt><%= Vacancy.human_attribute_name(:salary) %>:</dt>
+  <dd><%= number_to_currency @vacancy.salary %></dd>
+  <dt><%= Vacancy.human_attribute_name(:registration_date) %>:</dt>
+  <dd><%= l @vacancy.registration_date %></dd>
+  <dt><%= Vacancy.human_attribute_name(:address) %>:</dt>
+  <dd><%= @vacancy.address %></dd>
+
+</dl>
+
+<h1>Proposta</h1>
+
+<dl>
+    <dt><%= Proposal.human_attribute_name(:start_date) %>:</dt>
+    <dd><%= l @proposal.start_date %></dd>
+    <dt><%= Proposal.human_attribute_name(:job_functions) %>:</dt>
+    <dd><%= @proposal.job_functions %></dd>
+    <dt><%= Proposal.human_attribute_name(:benefits) %>:</dt>
+    <dd><%= @proposal.benefits %></dd>
+    <dt><%= Proposal.human_attribute_name(:salary) %>:</dt>
+    <dd><%= number_to_currency @proposal.salary %></dd>
+
+</dl>

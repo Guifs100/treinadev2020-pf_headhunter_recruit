@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_29_183045) do
+ActiveRecord::Schema.define(version: 2020_05_29_221723) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -96,6 +96,19 @@ ActiveRecord::Schema.define(version: 2020_05_29_183045) do
     t.index ["candidate_id"], name: "index_profiles_on_candidate_id"
   end
 
+  create_table "proposals", force: :cascade do |t|
+    t.date "start_date"
+    t.decimal "salary"
+    t.string "benefits"
+    t.string "job_functions"
+    t.integer "headhunter_id", null: false
+    t.integer "apply_vacancy_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["apply_vacancy_id"], name: "index_proposals_on_apply_vacancy_id"
+    t.index ["headhunter_id"], name: "index_proposals_on_headhunter_id"
+  end
+
   create_table "reject_apply_vacancies", force: :cascade do |t|
     t.string "feedback"
     t.integer "headhunter_id", null: false
@@ -137,6 +150,8 @@ ActiveRecord::Schema.define(version: 2020_05_29_183045) do
   add_foreign_key "comments", "headhunters"
   add_foreign_key "comments", "profiles"
   add_foreign_key "profiles", "candidates"
+  add_foreign_key "proposals", "apply_vacancies"
+  add_foreign_key "proposals", "headhunters"
   add_foreign_key "reject_apply_vacancies", "apply_vacancies"
   add_foreign_key "reject_apply_vacancies", "headhunters"
   add_foreign_key "star_profiles", "headhunters"

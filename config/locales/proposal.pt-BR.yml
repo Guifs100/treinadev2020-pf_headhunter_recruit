@@ -1,0 +1,11 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      proposal: Proposta
+    attributes:
+      proposal:
+        start_date: Data de Início
+        salary: Salário
+        benefits: Benefícios
+        job_functions: Funções
