@@ -30,3 +30,4 @@
     <dd><%= number_to_currency @proposal.salary %></dd>
 
 </dl>
+<%= link_to 'Responder Proposta', edit_vacancy_apply_vacancy_proposal_path(@vacancy.id, @apply_vacancy.id, @proposal.id)%>

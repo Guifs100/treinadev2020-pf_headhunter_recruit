@@ -189,9 +189,6 @@ feature 'Candidate see proposal' do
       expect(page).to have_content('Benefícios: VA, VR, vale-transporte')
       expect(page).to have_content('Funções: Desenvolver o back-end do projeto Rental Cars com Rails')
       expect(Proposal.count).to eq 1
-
-      expect(page).not_to have_content(other_vacancy.title)
-      expect(page).not_to have_content(other_vacancy.job_description)
     end
   end
 

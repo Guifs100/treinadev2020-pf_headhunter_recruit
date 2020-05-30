@@ -7,6 +7,9 @@ class Proposal < ApplicationRecord
             :benefits, :job_functions,
             presence: true
 
+  enum status: {initial: 0, accepted: 5, rejected: 10}
+
+
  scope :profile_proposals, -> () {joins(:profile)}
 
             

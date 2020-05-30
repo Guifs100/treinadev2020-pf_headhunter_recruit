@@ -1,0 +1,15 @@
+<h1>Responda a proposta</h1>
+
+<p>Caso aceite, estará confirmando o início na data da proposta</p>
+<p> Data: <%= l @proposal.start_date %></p>
+<%= form_with model: [@vacancy, @apply_vacancy, @proposal], local: true do |f|%>
+
+
+  <%= f.label :status, 'Resposta'%>
+  <%= f.select(:status, [['', 'initial'],['Aceitar', 'accepted'], ['Rejeitar', 'rejected']]) %>
+  <%= f.label :answer, 'Comentário'%>
+  <%= f.text_field :answer %>
+
+
+  <%= f.submit 'Enviar' %>
+<% end %>

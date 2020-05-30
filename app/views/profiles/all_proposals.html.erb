@@ -1,15 +1,17 @@
 <h1>Propostas</h1>
 
 <%  @proposals.each do |proposal| %>
-  <div id= "proposal-<%= proposal.id %>">
-      <dl>
-        <dt> Nome da Vaga </dt>
-        <dd><%= proposal.apply_vacancy.vacancy.title %></dd>
-        <dt> Descrição </dt>
-        <dd><%= proposal.apply_vacancy.vacancy.job_description %></dd>
-        <dt> Data de Início </dt>
-        <dd><%= l proposal.start_date %></dd>
-      </dl> 
-      <%= link_to 'Ver Proposta', vacancy_apply_vacancy_proposal_path(proposal.apply_vacancy.vacancy.id, proposal.apply_vacancy.id, proposal.id) %>
-  </div>
+  <% if proposal.initial? %>
+    <div id= "proposal-<%= proposal.id %>">
+        <dl>
+          <dt> Nome da Vaga </dt>
+          <dd><%= proposal.apply_vacancy.vacancy.title %></dd>
+          <dt> Descrição </dt>
+          <dd><%= proposal.apply_vacancy.vacancy.job_description %></dd>
+          <dt> Data de Início </dt>
+          <dd><%= l proposal.start_date %></dd>
+        </dl> 
+        <%= link_to 'Ver Proposta', vacancy_apply_vacancy_proposal_path(proposal.apply_vacancy.vacancy.id, proposal.apply_vacancy.id, proposal.id) %>
+    </div>
+  <% end %>
 <% end %>
