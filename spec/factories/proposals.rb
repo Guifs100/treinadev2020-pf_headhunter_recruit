@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :proposal do
-    start_date { "2020-05-29" }
-    salary { "9.99" }
-    benefits { "MyString" }
-    job_functions { "MyString" }
-    headhunter { nil }
-    apply_vacancy { nil }
+    start_date { 10.days.from_now }
+    salary { 2400 }
+    benefits { 'VA, VR, vale-transporte' }
+    job_functions { 'Desenvolver o back-end do projeto Rental Cars com Rails' }
+    headhunter
+    apply_vacancy
   end
 end

@@ -45,7 +45,7 @@ class ProfilesController < ApplicationController
 
   def all_reject_applies
     @profile = Profile.find(current_candidate.profile.id)
-    @apply_vacancies = ApplyVacancy.profile_applies(@profile.id)
+    @reject_apply_vacancies = RejectApplyVacancy.reject_applies(@profile.id)
   end
 
   private
