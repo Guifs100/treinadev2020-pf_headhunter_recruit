@@ -5,6 +5,6 @@ class RejectApplyVacancy < ApplicationRecord
 
   validates :feedback, presence: true
 
-  scope :reject_applies, -> (profile_id) {joins(:profile)}
+  scope :reject_applies, -> () {joins(:profile)}
 
 end

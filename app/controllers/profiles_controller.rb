@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :authorized_candidate, only: %i[new create edit update all_apply_jobs all_reject_applies]
-  before_action :profile_presence?, only: %i[show edit all_apply_jobs all_reject_applies]
+  before_action :profile_presence?, only: %i[show edit all_apply_jobs all_reject_applies all_proposals]
 
   def show
     id = params[:id]
@@ -44,8 +44,11 @@ class ProfilesController < ApplicationController
   end
 
   def all_reject_applies
-    @profile = Profile.find(current_candidate.profile.id)
-    @reject_apply_vacancies = RejectApplyVacancy.reject_applies(@profile.id)
+    @reject_apply_vacancies = RejectApplyVacancy.reject_applies
+  end
+
+  def all_proposals
+    @proposals = Proposal.profile_proposals
   end
 
   private
@@ -54,15 +57,6 @@ class ProfilesController < ApplicationController
     params.require(:profile).permit(:photo, :full_name, :social_name,
                                     :birth_date, :formation,
                                     :description, :experience)
-  end
-
-  def profile_presence?
-    if candidate_signed_in?
-      if current_candidate.profile.blank? 
-        flash[:notice] = 'Precisa Completar o perfil!'
-        redirect_to new_profile_path
-      end
-    end
   end
 
   def search_comments_profile

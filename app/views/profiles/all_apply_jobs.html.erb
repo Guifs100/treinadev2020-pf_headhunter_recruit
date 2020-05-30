@@ -1,5 +1,7 @@
 <h1> Minhas Vagas Aplicadas </h1>
 
+<%= link_to 'Ver Propostas', all_proposals_profiles_path %>
+
 <% @apply_vacancies.each do |applied| %>
   <div id="applied-vacancy-<%= applied.id%>" >
     <dl>

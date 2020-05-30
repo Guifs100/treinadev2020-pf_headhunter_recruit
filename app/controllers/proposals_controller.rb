@@ -1,5 +1,5 @@
 class ProposalsController < ApplicationController
-  before_action :authorized_headhunter
+  before_action :authorized_headhunter, only: %i[new create]
 
   def show
     @proposal = Proposal.find(params[:id])
