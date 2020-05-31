@@ -39,7 +39,7 @@ class VacanciesController < ApplicationController
 
   def answer_proposals
     @headhunter = current_headhunter
-    @proposals = Proposal.response_proposals
+    @proposals = Proposal.response_proposals(@headhunter.id)
   end
 
   private 
