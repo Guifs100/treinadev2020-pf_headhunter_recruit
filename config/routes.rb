@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   resources :vacancies, only: %i[ show new create] do
     get 'search', on: :collection
     get 'headhunter_vacancies', on: :collection
+    get 'answer_proposals', on: :collection
     resources :apply_vacancies, only: %i[ index show new create ] do
       resources :reject_apply_vacancies, only: %i[ new create]
       resources :proposals, only: %i[ show new create edit update] do
-        # get 'reject_proposal', on: :collection
       end
     end
   end

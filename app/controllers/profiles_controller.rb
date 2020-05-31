@@ -18,6 +18,7 @@ class ProfilesController < ApplicationController
     @profile.candidate = current_candidate
     if @profile.save
       flash[:notice] = 'Perfil criada com sucesso'
+      current_candidate.profile = @profile
       redirect_to @profile
     else
       render new_profile_path

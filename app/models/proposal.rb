@@ -11,6 +11,7 @@ class Proposal < ApplicationRecord
 
 
  scope :profile_proposals, -> () {joins(:profile)}
+ scope :response_proposals, -> () {where.not(status: :initial).joins(:headhunter)}
 
             
 

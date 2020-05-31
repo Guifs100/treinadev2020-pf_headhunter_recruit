@@ -1,0 +1,16 @@
+<h1> Respostas Recebidas </h1>
+
+<%  @proposals.each do |proposal| %>
+  <div id= "proposal-<%= proposal.id %>">
+    <dl>
+      <dt> Nome Completo: </dt>
+      <dd><%= proposal.profile.full_name %></dd>
+      <dt> Formação: </dt>
+      <dd><%= proposal.profile.formation %></dd>
+      <dt> Resposta: </dt>
+      <dd><%= proposal.status %></dd>
+      <dt> Comentário: </dt>
+      <dd><%= proposal.answer %></dd>
+    </dl> 
+  </div>
+<% end %>

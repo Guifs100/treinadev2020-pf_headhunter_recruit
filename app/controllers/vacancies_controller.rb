@@ -1,5 +1,5 @@
 class VacanciesController < ApplicationController
-  before_action :authorized_headhunter, only: %i[ headhunter_vacancies ] 
+  before_action :authorized_headhunter, only: %i[ headhunter_vacancies answer_proposals ] 
   before_action :authorized_candidate, only: %i[ search ] 
 
   def show
@@ -33,8 +33,13 @@ class VacanciesController < ApplicationController
   end
 
   def headhunter_vacancies
-    @headhunter = current_headhunter.id
-    @vacancies = Vacancy.register_vacancies(@headhunter)
+    @headhunter_id = current_headhunter.id
+    @vacancies = Vacancy.register_vacancies(@headhunter_id)
+  end
+
+  def answer_proposals
+    @headhunter = current_headhunter
+    @proposals = Proposal.response_proposals
   end
 
   private 
