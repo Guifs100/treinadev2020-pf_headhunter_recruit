@@ -1,5 +1,5 @@
 class VacanciesController < ApplicationController
-  before_action :authorized_headhunter, only: %i[ headhunter_vacancies answer_proposals ] 
+  before_action :authorized_headhunter, only: %i[ headhunter_vacancies answer_proposals close_vacancy ] 
   before_action :authorized_candidate, only: %i[ search ] 
 
   def show
@@ -40,6 +40,12 @@ class VacanciesController < ApplicationController
   def answer_proposals
     @headhunter = current_headhunter
     @proposals = Proposal.response_proposals(@headhunter.id)
+  end
+
+  def close_vacancy
+    @vacancy = Vacancy.find(params[:id])
+    @vacancy.unavailable!
+    redirect_to answer_proposals_vacancies_path
   end
 
   private 

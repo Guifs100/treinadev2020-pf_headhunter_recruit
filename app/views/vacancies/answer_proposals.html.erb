@@ -2,6 +2,9 @@
 
 <%  @proposals.each do |proposal| %>
   <div id= "proposal-<%= proposal.id %>">
+    <% if proposal.apply_vacancy.vacancy.unavailable? %>
+      <h3> Vaga Encerrada </h3>
+    <% end %>
     <dl>
       <dt> Nome Completo: </dt>
       <dd><%= proposal.profile.full_name %></dd>
@@ -12,5 +15,8 @@
       <dt> Comentário: </dt>
       <dd><%= proposal.answer %></dd>
     </dl> 
+    <% if proposal.accepted?%>
+      <%= link_to 'Encerrar Vaga', close_vacancy_vacancies_path(proposal.apply_vacancy.vacancy.id), method: :post %>
+    <% end %>
   </div>
 <% end %>
