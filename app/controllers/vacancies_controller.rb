@@ -45,7 +45,7 @@ class VacanciesController < ApplicationController
   def close_vacancy
     @vacancy = Vacancy.find(params[:id])
     @vacancy.unavailable!
-    redirect_to answer_proposals_vacancies_path
+    redirect_to answer_proposals_vacancies_path flash: {notice: 'Vaga encerrada com sucesso'}
   end
 
   private 
