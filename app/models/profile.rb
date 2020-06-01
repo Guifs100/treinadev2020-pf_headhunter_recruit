@@ -8,7 +8,8 @@ class Profile < ApplicationRecord
 
   validates :full_name, :social_name, :birth_date,
             :formation, :description,
-            :experience, :photo,
+            :experience, 
+            # :photo,
             presence: true
 
 end
