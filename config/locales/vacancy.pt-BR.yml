@@ -6,7 +6,7 @@ pt-BR:
     attributes:
       vacancy:
         title: Título
-        job_description: Descrição da vaga
+        job_description: Descrição da Vaga
         skills: Habilidades
         level: Nível
         salary: Salário

@@ -10,6 +10,6 @@ class Profile < ApplicationRecord
             :formation, :description,
             :experience, 
             # :photo,
-            presence: true
+            presence: {message: "%{attribute} não pode ficar em branco"}
 
 end

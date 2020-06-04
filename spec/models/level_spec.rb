@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-# TODO: teste para validades level
 RSpec.describe Level, type: :model do
   context 'validation' do
     it 'name cannot be blank' do

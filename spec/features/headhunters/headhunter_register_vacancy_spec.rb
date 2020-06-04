@@ -23,7 +23,7 @@ feature 'Headhunter register vacancy' do
     #assert
     expect(page).to have_content('Vaga criada com sucesso')
     expect(page).to have_content('Título: Desenvolvedor Ruby jr.')
-    expect(page).to have_content('Descrição da vaga: Desevolvedor terá treino e conhecera cultura da empresa')
+    expect(page).to have_content('Descrição da Vaga: Desevolvedor terá treino e conhecera cultura da empresa')
     expect(page).to have_content('Habilidades: Ruby, ruby on Rails, banco de dados.')
     expect(page).to have_content('Salário: R$ 1.200,00')
     expect(page).to have_content('Nível: Júnior')
@@ -46,7 +46,7 @@ feature 'Headhunter register vacancy' do
 
     #assert
     expect(page).to have_content('Título não pode ficar em branco')
-    expect(page).to have_content('Descrição da vaga não pode ficar em branco')
+    expect(page).to have_content('Descrição da Vaga não pode ficar em branco')
     expect(page).to have_content('Habilidades não pode ficar em branco')
     expect(page).to have_content('Salário não pode ficar em branco')
     expect(page).to have_content('Data limite da inscrição não pode ficar em branco')

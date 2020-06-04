@@ -6,7 +6,7 @@ class Proposal < ApplicationRecord
 
   validates :start_date, :salary,
             :benefits, :job_functions,
-            presence: true
+            presence: {message: "%{attribute} não pode ficar em branco"}
 
   enum status: {initial: 0, accepted: 5, rejected: 10}
 

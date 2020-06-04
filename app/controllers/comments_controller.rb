@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
       flash[:notice] = 'Comentário Criado!'
       redirect_to profile_path(@comment.profile)
     else
-      redirect_to new_profile_comment_path(@comment.profile.id), flash: {notice: 'Comentário não pode ficar em branco!'}
+      redirect_to new_profile_comment_path(@comment.profile), flash: {notice: 'Comentário não pode ficar em branco!'}
     end
   end
 

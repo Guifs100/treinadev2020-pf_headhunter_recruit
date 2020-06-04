@@ -5,8 +5,8 @@ class CandidatesHomeController < ApplicationController
   def index
     @candidate = current_candidate
 
-    @vacancies = Vacancy.index_candidate(current_candidate.profile.id)
-    @apply_vacancies = ApplyVacancy.profile_applies(current_candidate.profile.id)
+    @vacancies = Vacancy.index_candidate(current_candidate.profile)
+    @apply_vacancies = ApplyVacancy.profile_applies(current_candidate.profile)
   end
 
 end

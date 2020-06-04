@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'comentário cannot be blank' do
+    comment = Comment.new
+
+    comment.valid?
+
+    expect(comment.errors[:text]).to include('Comentário não pode '\
+                                                  'ficar em branco')
+  end
 end

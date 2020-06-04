@@ -7,8 +7,8 @@ class Vacancy < ApplicationRecord
 
 
   validates :title, :job_description, :skills, :salary,
-            :registration_date, :address, 
-            presence: true
+            :registration_date, :address, :level, 
+            presence: {message: "%{attribute} não pode ficar em branco"}
 
   enum status: {available: 0, unavailable: 5}
 

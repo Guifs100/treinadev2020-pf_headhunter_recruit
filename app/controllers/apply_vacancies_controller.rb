@@ -21,7 +21,7 @@ class ApplyVacanciesController < ApplicationController
       flash[:notice] = 'Cadastrado com sucesso!'
       redirect_to vacancy_apply_vacancy_path(@vacancy, @apply_vacancy)
     else
-      redirect_to new_vacancy_apply_vacancy_path(@apply_vacancy.vacancy.id), flash: {notice: 'Mensagem não pode ficar em branco!'}
+      redirect_to new_vacancy_apply_vacancy_path(@apply_vacancy.vacancy), flash: {notice: 'Mensagem não pode ficar em branco!'}
     end
   end
 
