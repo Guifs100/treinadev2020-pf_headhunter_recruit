@@ -9,7 +9,7 @@ class Profile < ApplicationRecord
   validates :full_name, :social_name, :birth_date,
             :formation, :description,
             :experience, 
-            # :photo,
+            :photo,
             presence: {message: "%{attribute} não pode ficar em branco"}
 
 end

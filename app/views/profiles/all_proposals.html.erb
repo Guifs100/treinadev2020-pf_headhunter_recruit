@@ -4,6 +4,8 @@
   <% if proposal.initial? %>
     <div id= "proposal-<%= proposal.id %>">
         <dl>
+          <dt> Nome do Candidato </dt>
+          <dd><%= proposal.profile.full_name %></dd>
           <dt> Nome da Vaga </dt>
           <dd><%= proposal.apply_vacancy.vacancy.title %></dd>
           <dt> Descrição </dt>

@@ -45,11 +45,11 @@ class ProfilesController < ApplicationController
   end
 
   def all_reject_applies
-    @reject_apply_vacancies = RejectApplyVacancy.reject_applies
+    @reject_apply_vacancies = RejectApplyVacancy.reject_applies(current_candidate.profile)
   end
 
   def all_proposals
-    @proposals = Proposal.profile_proposals
+    @proposals = Proposal.profile_proposals(current_candidate.profile)
   end
 
   private

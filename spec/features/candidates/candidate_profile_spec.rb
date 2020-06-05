@@ -39,7 +39,7 @@ feature 'Candidate profile' do
     click_on 'Enviar'
 
     #assert
-    # expect(page).to have_content('Foto não pode ficar em branco')
+    expect(page).to have_content('Foto não pode ficar em branco')
     expect(page).to have_content('Nome Completo não pode ficar em branco')
     expect(page).to have_content('Nome Social não pode ficar em branco')
     expect(page).to have_content('Data de Nascimento não pode ficar em branco')
@@ -58,6 +58,16 @@ feature 'Candidate profile' do
                               description: "Formado na Fatec",
                               experience: "Nenhuma",
                               photo: fixture_file_upload(Rails.root.join('spec', 'support', 'assets', 'perfil.jpg'), 'image/jpg'))
+
+    # profile = Profile.new(candidate: candidate, full_name: "Fulano Silva", 
+    #                           social_name: "Fulano",
+    #                           birth_date: "15/11/1996",
+    #                           formation: "Análise e desenvolvimento de sistemas",
+    #                           description: "Formado na Fatec",
+    #                           experience: "Nenhuma")
+    
+    # profile.photo.attach(io: File.open(Rails.root.join('spec', 'support', 'assets', 'perfil.jpg')), filename: 'perfil.jpg')
+    # profile.save
 
     #act
     login_as candidate, scope: :candidate

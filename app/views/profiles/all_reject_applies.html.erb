@@ -3,6 +3,8 @@
 <%  @reject_apply_vacancies.each do |reject| %>
   <div id= "reject-apply-vacancy-<%= reject.id %>">
       <dl>
+        <dt> Nome do Candidato </dt>
+        <dd><%= reject.profile.full_name %></dd>
         <dt> Nome da Vaga </dt>
         <dd><%= reject.apply_vacancy.vacancy.title %></dd>
         <dt> Descrição </dt>
