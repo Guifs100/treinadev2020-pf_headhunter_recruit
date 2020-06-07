@@ -1,9 +1,13 @@
 <h1>Propostas</h1>
 
 <%  @proposals.each do |proposal| %>
-  <% if proposal.initial? %>
+  <% unless proposal.rejected? %>
     <div id= "proposal-<%= proposal.id %>">
         <dl>
+          <% if proposal.accepted? %>
+            <p>Proposta aceita</p>
+          <% end %>
+
           <dt> Nome do Candidato </dt>
           <dd><%= proposal.profile.full_name %></dd>
           <dt> Nome da Vaga </dt>
