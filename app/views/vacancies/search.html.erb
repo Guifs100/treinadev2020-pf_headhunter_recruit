@@ -1,0 +1,16 @@
+
+<h1>Vagas Buscadas</h1>
+
+<% @vacancies.each do |vacancy| %>
+  <div id="vacancy-<%= vacancy.id %>">
+    <dl>
+      <dt> Vaga </dt>
+      <dd><%= vacancy.title %></dd>
+      <dt> Descrição </dt>
+      <dd><%= vacancy.job_description %></dd>
+      <dt>Nível</dt>
+      <dd><%= vacancy.level.name %></dd>
+    </dl>
+    <p><%= link_to 'Ver Detalhes', vacancy_path(vacancy)%></p>
+  </div>
+<% end %>

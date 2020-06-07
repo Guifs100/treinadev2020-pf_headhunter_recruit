@@ -27,9 +27,10 @@ class VacanciesController < ApplicationController
   end
 
   def search
-    @vacancies = Vacancy.search(params[:query])
-    @candidate = current_candidate
-    render 'candidates_home/index'
+    # byebug
+    @vacancies = Vacancy.search(params[:q])
+    # @candidate = current_candidate
+    # render 'candidates_home/index'
   end
 
   def headhunter_vacancies

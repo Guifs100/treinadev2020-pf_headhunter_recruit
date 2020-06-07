@@ -139,9 +139,9 @@ ActiveRecord::Schema.define(version: 2020_05_30_205040) do
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "level_id", null: false
     t.integer "status", default: 0
     t.integer "headhunter_id", null: false
-    t.integer "level_id", null: false
     t.index ["headhunter_id"], name: "index_vacancies_on_headhunter_id"
     t.index ["level_id"], name: "index_vacancies_on_level_id"
   end

@@ -1,10 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 Candidate.create([{email:'aaa@candidate.com', password:'12345678' },
                   {email:'bbb@candidate.com', password:'12345678' },
                   {email:'ccc@candidate.com', password:'12345678' },
@@ -24,8 +20,8 @@ Headhunter.create([{email:'aaa@headhunter.com', password:'12345678' },
 #                 {full_name:'ddd Silva', social_name: 'DDD',  birth_date: '29/05/1998', formation: 'ADS', description: 'Fatec-SP', experience: '3 anos', candidate: Candidate.find(4)},
 #                 {full_name:'eee Silva', social_name: 'EEE',  birth_date: '27/02/1994', formation: 'ADS', description: 'Fatec-SP', experience: '4 anos', candidate: Candidate.find(5)}])
 
-profile1 = Profile.new(full_name:'aaa Silva', social_name: 'AAA',  birth_date: '11/08/1992', formation: 'ADS', description: 'Fatec-SP', experience: 'Nenhuma', candidate: Candidate.find(2))
-profile2 = Profile.new(full_name:'bbb Silva', social_name: 'BBB',  birth_date: '17/12/1991', formation: 'ADS', description: 'Fatec-SP', experience: '1 ano', candidate: Candidate.find(1))
+profile1 = Profile.new(full_name:'aaa Silva', social_name: 'AAA',  birth_date: '11/08/1992', formation: 'ADS', description: 'Fatec-SP', experience: 'Nenhuma', candidate: Candidate.find(1))
+profile2 = Profile.new(full_name:'bbb Silva', social_name: 'BBB',  birth_date: '17/12/1991', formation: 'ADS', description: 'Fatec-SP', experience: '1 ano', candidate: Candidate.find(2))
 profile3 = Profile.new(full_name:'ccc Silva', social_name: 'CCC',  birth_date: '05/11/1996', formation: 'ADS', description: 'Fatec-SP', experience: '2 anos', candidate: Candidate.find(3))
 profile4 = Profile.new(full_name:'ddd Silva', social_name: 'DDD',  birth_date: '29/05/1998', formation: 'ADS', description: 'Fatec-SP', experience: '3 anos', candidate: Candidate.find(4))
 profile5 = Profile.new(full_name:'eee Silva', social_name: 'EEE',  birth_date: '27/02/1994', formation: 'ADS', description: 'Fatec-SP', experience: '4 anos', candidate: Candidate.find(5))
@@ -34,8 +30,8 @@ profile2.photo.attach(io: File.open(Rails.root.join('spec', 'support', 'assets',
 profile3.photo.attach(io: File.open(Rails.root.join('spec', 'support', 'assets', 'perfil.jpg')), filename: 'perfil.jpg')
 profile4.photo.attach(io: File.open(Rails.root.join('spec', 'support', 'assets', 'perfil.jpg')), filename: 'perfil.jpg')
 profile5.photo.attach(io: File.open(Rails.root.join('spec', 'support', 'assets', 'perfil.jpg')), filename: 'perfil.jpg')
-profile1.save
 profile2.save
+profile1.save
 profile3.save
 profile4.save
 profile5.save

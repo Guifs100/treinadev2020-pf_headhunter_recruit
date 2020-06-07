@@ -109,7 +109,7 @@ feature 'Candidate apply a vacancy' do
     expect(page).to have_content(apply_vacancy.vacancy.job_description)
   end
 
-  xscenario 'cannot apply to the same vacancy' do
+  scenario 'cannot apply to the same vacancy' do
     level = create(:level, name: 'Junior')
     other_level = create(:level, name: 'Senior')
     headhunter = create(:headhunter)

@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
     @profile.candidate = current_candidate
     if @profile.save
       flash[:notice] = 'Perfil criada com sucesso'
-      current_candidate.profile = @profile
+      # Candidate.find(@profile.candidate.id).profile = @profile
       redirect_to @profile
     else
       render new_profile_path
@@ -49,7 +49,8 @@ class ProfilesController < ApplicationController
   end
 
   def all_proposals
-    @proposals = Proposal.profile_proposals(current_candidate.profile)
+    @profile = current_candidate.profile
+    @proposals = Proposal.profile_proposals(@profile)
   end
 
   private

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 feature 'Candidate see a vacancy' do
-  let(:profile) {build :profile, :with_photo}
-  let(:profile) {build_stubbed :profile, :with_photo}
+  # let(:profile) {build :profile, :with_photo}
+  # let(:profile) {build_stubbed :profile, :with_photo}
   let(:profile) {create :profile, :with_photo}
   scenario 'successufully' do
     level = create(:level, name: 'Junior')
@@ -124,25 +124,27 @@ feature 'Candidate see a vacancy' do
                                        headhunter: headhunter,
                                        status: 0)
     candidate = Candidate.create!(email: 'teste@candidate.com', password: '12345678')
-    profile.candidate = candidate
-    profile.full_name = "Fulano Silva"
-    profile.social_name = "Fulano"
-    profile.birth_date = '15/11/1996'
-    profile.formation = 'Análise e desenvolvimento de sistemas'
-    profile.description = 'Formado na Fatec'
-    profile.experience = 'Nenhuma'
+    profile = Profile.create!(candidate: candidate, full_name: "Fulano Silva", 
+                              social_name: "Fulano",
+                              birth_date: "15/11/1996",
+                              formation: "Análise e desenvolvimento de sistemas",
+                              description: "Formado na Fatec",
+                              experience: "Nenhuma",
+                              photo: fixture_file_upload(Rails.root.join('spec', 'support', 'assets', 'perfil.jpg'), 'image/jpg'))
 
     login_as candidate, scope: :candidate
     visit root_path
-    fill_in 'Procurar Vagas', with: 'desenvol'
+    fill_in 'Procurar Vagas', with: 'Junior'
     click_on 'Buscar'
 
     expect(page).to have_content(vacancy.title)
     expect(page).to have_content(vacancy.job_description)
     expect(page).to have_content(vacancy.level.name)
-    expect(page).to have_content(other_vacancy.title)
-    expect(page).to have_content(other_vacancy.job_description)
-    expect(page).to have_content(other_vacancy.level.name)
+    expect(current_path).to eq(search_vacancies_path)
+    expect(page).to have_content('Vagas Buscadas')
+
+    expect(page).not_to have_content(other_vacancy.title)
+    expect(page).not_to have_content(other_vacancy.job_description)
     expect(page).not_to have_content(another_vacancy.title)
     expect(page).not_to have_content(another_vacancy.job_description)
     expect(page).not_to have_content(another_vacancy2.title)
