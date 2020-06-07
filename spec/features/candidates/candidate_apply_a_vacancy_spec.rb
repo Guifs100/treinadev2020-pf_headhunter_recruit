@@ -152,4 +152,7 @@ feature 'Candidate apply a vacancy' do
     expect(page).to have_content(other_vacancy.job_description)
     expect(page).to have_content(other_vacancy.level.name)
   end
+
+  # TODO: Não pode candidatar de novo
+
 end

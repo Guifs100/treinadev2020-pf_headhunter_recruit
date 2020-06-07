@@ -21,9 +21,10 @@
     <% if candidate_signed_in? %>
       <%= link_to 'Candidatar', new_vacancy_apply_vacancy_path(@vacancy) %>
     <% end %>
-<!-- TODO: Filtrar para sumir os rejeitados-->
+    
     <% if headhunter_signed_in? %>
         <%  @apply_vacancies.each do |applied| %>
+          <% unless RejectApplyVacancy.exists?(apply_vacancy: applied, headhunter: current_headhunter) %>
             <div id= "applied-vacancy-<%= applied.id %>">
               <dl>
                 <dt> Nome Completo: </dt>
@@ -43,6 +44,7 @@
               <%= link_to 'Enviar Proposta', new_vacancy_apply_vacancy_proposal_path(@vacancy.id, applied.id) %>
 
             </div>
+          <% end %>
         <% end %>
     <% end %>
 

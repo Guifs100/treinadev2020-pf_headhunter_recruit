@@ -14,14 +14,8 @@ Headhunter.create([{email:'aaa@headhunter.com', password:'12345678' },
                    {email:'ddd@headhunter.com', password:'12345678' },
                    {email:'eee@headhunter.com', password:'12345678' } ])
 
-# Profile.create([{full_name:'aaa Silva', social_name: 'AAA',  birth_date: '11/08/1992', formation: 'ADS', description: 'Fatec-SP', experience: 'Nenhuma', candidate: Candidate.find(2)},
-#                 {full_name:'bbb Silva', social_name: 'BBB',  birth_date: '17/12/1991', formation: 'ADS', description: 'Fatec-SP', experience: '1 ano', candidate: Candidate.find(1)},
-#                 {full_name:'ccc Silva', social_name: 'CCC',  birth_date: '05/11/1996', formation: 'ADS', description: 'Fatec-SP', experience: '2 anos', candidate: Candidate.find(3)},
-#                 {full_name:'ddd Silva', social_name: 'DDD',  birth_date: '29/05/1998', formation: 'ADS', description: 'Fatec-SP', experience: '3 anos', candidate: Candidate.find(4)},
-#                 {full_name:'eee Silva', social_name: 'EEE',  birth_date: '27/02/1994', formation: 'ADS', description: 'Fatec-SP', experience: '4 anos', candidate: Candidate.find(5)}])
-
-profile1 = Profile.new(full_name:'aaa Silva', social_name: 'AAA',  birth_date: '11/08/1992', formation: 'ADS', description: 'Fatec-SP', experience: 'Nenhuma', candidate: Candidate.find(1))
 profile2 = Profile.new(full_name:'bbb Silva', social_name: 'BBB',  birth_date: '17/12/1991', formation: 'ADS', description: 'Fatec-SP', experience: '1 ano', candidate: Candidate.find(2))
+profile1 = Profile.new(full_name:'aaa Silva', social_name: 'AAA',  birth_date: '11/08/1992', formation: 'ADS', description: 'Fatec-SP', experience: 'Nenhuma', candidate: Candidate.find(1))
 profile3 = Profile.new(full_name:'ccc Silva', social_name: 'CCC',  birth_date: '05/11/1996', formation: 'ADS', description: 'Fatec-SP', experience: '2 anos', candidate: Candidate.find(3))
 profile4 = Profile.new(full_name:'ddd Silva', social_name: 'DDD',  birth_date: '29/05/1998', formation: 'ADS', description: 'Fatec-SP', experience: '3 anos', candidate: Candidate.find(4))
 profile5 = Profile.new(full_name:'eee Silva', social_name: 'EEE',  birth_date: '27/02/1994', formation: 'ADS', description: 'Fatec-SP', experience: '4 anos', candidate: Candidate.find(5))
@@ -30,8 +24,8 @@ profile2.photo.attach(io: File.open(Rails.root.join('spec', 'support', 'assets',
 profile3.photo.attach(io: File.open(Rails.root.join('spec', 'support', 'assets', 'perfil.jpg')), filename: 'perfil.jpg')
 profile4.photo.attach(io: File.open(Rails.root.join('spec', 'support', 'assets', 'perfil.jpg')), filename: 'perfil.jpg')
 profile5.photo.attach(io: File.open(Rails.root.join('spec', 'support', 'assets', 'perfil.jpg')), filename: 'perfil.jpg')
-profile2.save
 profile1.save
+profile2.save
 profile3.save
 profile4.save
 profile5.save
